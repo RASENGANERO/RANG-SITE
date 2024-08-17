@@ -1,0 +1,1 @@
+<?php $filesInfo = ["/local/templates/jvas/css/main.css" => "1723386258199003",]; ?>
