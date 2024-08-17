@@ -63,6 +63,13 @@ $arUrlRewrite=array (
     'PATH' => '/newstwo/index.php',
     'SORT' => 100,
   ),
+  8=>array (
+    'CONDITION' => '#^/residents/',
+    'RULE' => NULL,
+    'ID' => '',
+    'PATH' => '/residents/index.php',
+    'SORT' => 100,
+  ),
   /*11 => 
   array (
     'CONDITION' => '#^/examples/my-components/news/#',
