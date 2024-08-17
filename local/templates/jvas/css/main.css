@@ -11,7 +11,14 @@ p {
   overflow: hidden;
   width: 100%;
 }
-
+@font-face {
+	font-family: 'Robotoflex'; 
+	src: url("/local/templates/jvas/fonts/RobotoFlex.ttf"); 
+}
+@font-face {
+	font-family: 'Sourcecode1'; 
+	src: url("/local/templates/jvas/fonts/SourceCodePro-Regular.ttf"); 
+}
 body {
   background-color: #2d291e;
 }
@@ -76,18 +83,20 @@ header .header_block {
 header .header_block .social_menu {
   display: flex;
 }
-header .header_block .social_menu h4 {
-  font-family: "Roboto Flex", sans-serif;
+.social-menu-text {
+  font-family: "Robotoflex";
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 200;
   line-height: 26px;
-  color: #fff;
+  letter-spacing: 0%;
+  text-align: left;
   text-transform: uppercase;
   margin-right: 80px;
   position: relative;
   margin-bottom: 0;
+  color: rgb(255, 255, 255);
 }
-header .header_block .social_menu h4::before {
+.social-menu-text::before {
   content: "";
   position: absolute;
   height: 80px;

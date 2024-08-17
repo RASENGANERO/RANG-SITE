@@ -37,7 +37,7 @@ global $APPLICATION;
                         <a href="/"><img src="<?=SITE_TEMPLATE_PATH?>/img/logo.svg" alt=""></a>
                     </div>
                     <div class="social_menu">
-                        <h4>Подписывайтесь:</h4>
+                        <h4 class="social-menu-text">Подписывайтесь:</h4>
                         <ul>
                             <li>
                                 <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/tg.svg" alt=""></a>
