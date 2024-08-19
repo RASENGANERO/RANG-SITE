@@ -1,4 +1,4 @@
-<?php
+<button?php
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true){
 	die();
 }
@@ -63,10 +63,8 @@ global $APPLICATION;
                         </ul>
                     </div>
                     <div class="menu_child">
-                        <ul>
-                            <li class="menu_child1"><a href="#" class="contact-btn">связь с нами</a></li>
-                            <li class="menu_child2"><a href="#">меню</a></li>
-                        </ul>
+                        <button class="contact-btn">Cвязь с нами</button>
+                        <button class="menu-btn">Меню</button>
                     </div>
                 </div>
             </div>

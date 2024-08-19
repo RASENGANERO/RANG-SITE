@@ -86,7 +86,7 @@ header .header_block .social_menu {
 .social-menu-text {
   font-family: "Robotoflex";
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 200;
   line-height: 26px;
   color: #fff;
   text-transform: uppercase;
@@ -113,14 +113,14 @@ header .header_block .social_menu ul li {
 header .header_block .social_menu ul li:last-child {
   margin-right: 0;
 }
-header .header_block .menu_child ul {
+.menu_child {
   display: flex;
 }
-header .header_block .menu_child ul li {
+.menu_child button {
   margin-right: 180px;
   position: relative;
 }
-header .header_block .menu_child ul li::before {
+.menu_child button::before {
   content: "";
   position: absolute;
   height: 80px;
@@ -129,19 +129,19 @@ header .header_block .menu_child ul li::before {
   top: -28px;
   left: -84px;
 }
-header .header_block .menu_child ul li:last-child {
+.menu_child button:last-child {
   margin-right: 0;
 }
-header .header_block .menu_child ul li a {
-  font-family: "Roboto Flex", sans-serif;
+.menu_child button {
+  font-family: "Robotoflex", sans-serif;
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 200;
   line-height: 26px;
   color: #fff;
   text-transform: uppercase;
   transition: 0.4s all ease;
 }
-header .header_block .menu_child ul li a:hover {
+.menu_child button:hover {
   color: #ffc85e;
 }
 header .header_menu {
@@ -3662,13 +3662,13 @@ input::-webkit-inner-spin-button {
   .social-menu-text::before {
     left: -70px;
   }
-  header .header_block .menu_child ul li::before {
+  .menu_child button::before {
     left: -37px;
   }
   header .header_block .social_menu ul {
     padding-left: 0;
   }
-  header .header_block .menu_child ul li {
+  .menu_child button {
     margin-right: 72px;
   }
   .social-menu-text {
@@ -3894,14 +3894,14 @@ input::-webkit-inner-spin-button {
     background-size: 903px 100%;
   }
 }
-@media only screen and (max-width: 1399px) {
+@media (max-width: 1400px) {
   .logo img {
     width: 100px;
   }
   header .header_menu {
     width: 366px;
   }
-  header .header_block .menu_child ul li::before,
+  .menu_child button::before,
   .social-menu-text::before {
     height: 42px;
     top: -7px;
@@ -3909,8 +3909,13 @@ input::-webkit-inner-spin-button {
   header .header_block .social_menu {
     align-items: center;
   }
-  header .header_block .menu_child ul li a,
   .social-menu-text {
+    font-size: 16px;
+    font-weight: 200;
+    line-height: 22px;
+  }
+  .menu_child button
+  {
     font-size: 16px;
     line-height: 22px;
   }
@@ -5069,7 +5074,7 @@ input::-webkit-inner-spin-button {
     width: 80%;
   }
 }
-@media only screen and (max-width: 1199px) {
+@media (max-width: 1200px) {
   .container {
     max-width: 992px;
     padding-left: 16px;
@@ -5085,20 +5090,19 @@ input::-webkit-inner-spin-button {
   }
   .social-menu-text {
     font-size: 14px;
-    line-height: 20px;
   }
   header .header_block .social_menu ul li img {
     height: 13px;
   }
-  header .header_block .menu_child ul {
+  .menu_child button {
     padding-left: 0;
   }
-  header .header_block .menu_child ul li::before {
+  .menu_child button::before {
     left: -40px;
     top: -7px;
     height: 36px;
   }
-  header .header_block .menu_child ul li {
+  .menu_child button {
     margin-right: 80px;
   }
   .social-menu-text::before {
@@ -6156,10 +6160,12 @@ input::-webkit-inner-spin-button {
     height: 389px;
   }
 }
-@media only screen and (max-width: 991px) {
-  header .header_block .menu_child ul .menu_child1,
-  header .header_block .menu_child ul li:nth-child(1):before,
+@media (max-width: 992px) {
   .social-menu-text {
+    display: none;
+  }
+  .menu_child:first-child
+  {
     display: none;
   }
   .container {
@@ -6187,10 +6193,10 @@ input::-webkit-inner-spin-button {
     padding: 0px 0 0 35px;
     margin: 0 auto;
   }
-  header .header_block .menu_child ul .menu_child2 {
+  .menu_child:last-child {
     padding-left: 35px;
   }
-  header .header_block .menu_child ul li::before {
+  .menu_child button::before {
     left: 0;
   }
   header .header_menu {
@@ -6741,11 +6747,11 @@ input::-webkit-inner-spin-button {
   header .header_block .social_menu {
     display: none;
   }
-  header .header_block .menu_child ul li:last-child {
+  .menu_child:last-child {
     padding: 0;
     margin: 0;
   }
-  header .header_block .menu_child ul li::before {
+  .menu_child button::before {
     display: none;
   }
   header .header_menu-links .header_menu-social {
