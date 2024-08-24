@@ -1,8 +1,9 @@
-<button?php
+<?php
 if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true){
 	die();
 }
 global $APPLICATION;
+require_once($_SERVER['DOCUMENT_ROOT'] . '/local/templates/jvas/functions/functions.php');
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -34,43 +35,95 @@ global $APPLICATION;
             <div class="container">
                 <div class="header_block">
                     <div class="logo">
-                        <a href="/"><img src="<?=SITE_TEMPLATE_PATH?>/img/logo.svg" alt=""></a>
+                        <?php
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                array(
+                                    "AREA_FILE_SHOW" => "file", 
+                                    "PATH" => "/local/templates/jvas/components/include/header/inc_logo.php",
+                                    "EDIT_TEMPLATE"=>"" 
+                                )
+                            );
+                        ?>
                     </div>
                     <div class="social_menu">
-                        <h4 class="social-menu-text">Подписывайтесь:</h4>
-                        <ul>
-                            <li>
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/tg.svg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/wk.svg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/youtube.svg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/x.svg" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/t.svg" alt=""></a>
-                            </li>
-                            <li>
-                               <img src="<?=SITE_TEMPLATE_PATH?>/img/star.svg" alt="">
-                            </li>
-                            <li>
-                                <a href="#"><img src="<?=SITE_TEMPLATE_PATH?>/img/vc.svg" alt=""></a>
-                            </li>
-                        </ul>
+                        <?php
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => "/local/templates/jvas/components/include/header/inc_socialtext.php",
+                                    "EDIT_TEMPLATE" => "",
+                                )
+                            );
+                        ?>
+                        <?php
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => "/local/templates/jvas/components/include/header/inc_socials.php",
+                                    "EDIT_TEMPLATE" => "",
+                                )
+                            );
+                        ?>
                     </div>
                     <div class="menu_child">
-                        <button class="contact-btn">Cвязь с нами</button>
+                        <?php
+                            $APPLICATION->IncludeComponent(
+                                "bitrix:main.include",
+                                "",
+                                array(
+                                    "AREA_FILE_SHOW" => "file",
+                                    "PATH" => "/local/templates/jvas/components/include/header/inc_connection.php",
+                                    "EDIT_TEMPLATE" => "",
+                                )
+                            );
+                        ?>
                         <button class="menu-btn">Меню</button>
                     </div>
                 </div>
             </div>
-            <div class="header_menu">
+            <?php
+            	$APPLICATION->IncludeComponent("bitrix:menu", "services_menu", Array(
+                        "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                        "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                        "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                        "MAX_LEVEL" => "2",	// Уровень вложенности меню
+                        "MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+                            0 => "",
+                        ),
+                        "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                        "MENU_CACHE_TYPE" => "N",	// Тип кеширования
+                        "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                        "ROOT_MENU_TYPE" => "services",	// Тип меню для первого уровня
+                        "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+                    ),
+                    false
+                );
+                $APPLICATION->IncludeComponent("bitrix:menu", "main_menu", Array(
+	                "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+		            "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+		            "DELAY" => "N",	// Откладывать выполнение шаблона меню
+		            "MAX_LEVEL" => "2",	// Уровень вложенности меню
+		            "MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+			            0 => "",
+		            ),
+		            "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+		            "MENU_CACHE_TYPE" => "N",	// Тип кеширования
+		            "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+		            "ROOT_MENU_TYPE" => "main",	// Тип меню для первого уровня
+		            "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+	                ),
+	            false
+                );
+            ?>
+            <!--< <div class="header_menu">
                 <div class="container">
-                    <div class="menu_accordion">
+                   <div class="menu_accordion">
                         <button class="accordion_btn">
                             услуги 
                             <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,8 +148,9 @@ global $APPLICATION;
                                 <span>Построить отдел маркетинга и продаж</span>
                             </a>
                         </div>
-                    </div>
-                    <div class="header_menu-links">
+                    </div>-->
+                   
+                     <!--<div class="header_menu-links">
                         <a href="#" class="header_menu-link">о компании</a>
                         <a href="#" class="header_menu-link">Резиденты</a>
                         <a href="#" class="header_menu-link">Технологии AI</a>
@@ -115,6 +169,7 @@ global $APPLICATION;
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </header>
+        <?php require_once($_SERVER['DOCUMENT_ROOT'] . '/local/templates/jvas/modals/modals.php'); ?>
     

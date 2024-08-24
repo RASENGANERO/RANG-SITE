@@ -1,0 +1,1 @@
+<span class="inn-text">ИНН 7777777777</span>

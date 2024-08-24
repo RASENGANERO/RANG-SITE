@@ -1,0 +1,1 @@
+<a href="mailto:info@range.com" class="contact_email">info@range.com</a>

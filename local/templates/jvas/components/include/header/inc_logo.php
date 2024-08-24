@@ -1,0 +1,1 @@
+<a href="/"><img src="/local/templates/jvas/img/logo.svg"></a>

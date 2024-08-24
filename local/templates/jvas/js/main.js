@@ -1,82 +1,51 @@
-// Elementlarni olish
-const modalFormOpen = document.querySelectorAll('.contact-btn');
-const modalClose = document.querySelectorAll('.modal-close');
-const modalForm = document.querySelector('.modal_form');
-const modalBgs = document.querySelectorAll('.modal_bg');
-const body = document.querySelector('body');
-const modalPrivacyOpen2 = document.querySelectorAll('.privacy_open2');
-const modalPrivacyOpen = document.querySelectorAll('.privacy_open');
-const modalPrivacy = document.querySelector('.modal_privacy1');
-const modalPrivacy2 = document.querySelector('.modal_privacy2');
+
 const modalThank = document.querySelector('.modal_thank');
-const formBox = document.querySelector('.form_boxs');
-const formInputs = document.querySelectorAll('.form_boxs input[required]');
 
-// Modalni ochish funksiyasi
-const openModal = (modal) => {
+function openModal(modal){
     modal.classList.add('active');
-    body.style.overflow = 'hidden';
+    document.getElementsByTagName('body')[0].style.overflow = 'hidden';
 }
-
-// Modalni yopish funksiyasi
-const closeModal = (modal) => {
+function closeModal(modal){
     modal.classList.remove('active');
     if (!document.querySelector('.modal.active')) {
-        body.style.overflow = '';
+        document.getElementsByTagName('body')[0].style.overflow = '';
     }
 }
-
-// Forma tekshirish va modal ochish
-const handleSubmit = (event) => {
-    event.preventDefault();
-    let allFilled = true;
-    formInputs.forEach(input => {
-        if (!input.value.trim()) {
-            allFilled = false;
-            input.classList.add('error');
-        } else {
-            input.classList.remove('error');
-        }
-    });
-
-    if (allFilled) {
-        openModal(modalThank);
-        formBox.reset();
-    }
+function closeAlls(modal){
+    let closeModalbt=modal.querySelector('.modal-close');
+    closeModalbt.addEventListener('click',() => closeModal(modal));
+    let closeModalOut=modal.querySelector('.modal_bg');
+    closeModalOut.addEventListener('click',() => closeModal(modal));       
 }
-formBox.addEventListener('submit', handleSubmit);
-
-// Hodisalarni ulash
-modalFormOpen.forEach(button => {
-    button.addEventListener('click', () => openModal(modalForm));
-});
-modalPrivacyOpen.forEach(button => {
-    button.addEventListener('click', () => openModal(modalPrivacy));
-});
-modalPrivacyOpen2.forEach(button => {
-    button.addEventListener('click', () => openModal(modalPrivacy2));
-});
-modalClose.forEach(close => {
-    close.addEventListener('click', () => {
-        closeModal(modalForm);
-        closeModal(modalThank);
-        closeModal(modalPrivacy);
-        closeModal(modalPrivacy2);
-    });
-});
-modalBgs.forEach(modalBg => {
-    modalBg.addEventListener('click', () => {
-        closeModal(modalForm);
-        closeModal(modalThank);
-        closeModal(modalPrivacy);
-        closeModal(modalPrivacy2);
-    });
-});
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', ()=>{
+    if(document.getElementsByClassName('privacy_open2').length!=0){
+        let s=document.getElementsByClassName('privacy_open2');
+        let privacyForm2=document.getElementsByClassName('modal_privacy2')[0];
+        Array.from(s).forEach(button => {
+            button.addEventListener('click', () => openModal(privacyForm2));
+        });
+        closeAlls(privacyForm2);
+    }
+    if(document.getElementsByClassName('privacy_open').length!=0){
+        let s=document.getElementsByClassName('privacy_open');
+        let privacyForm=document.getElementsByClassName('modal_privacy1')[0];
+        Array.from(s).forEach(button => {
+            button.addEventListener('click', () => openModal(privacyForm));
+        });
+        closeAlls(privacyForm);
+    }
+    if(document.getElementsByClassName('contact-btn').length!=0){
+        let s=document.getElementsByClassName('contact-btn');
+        let modalForm=document.getElementsByClassName('modal_form')[0];
+        Array.from(s).forEach(button => {
+            button.addEventListener('click', () => openModal(modalForm));
+        });
+        closeAlls(modalForm);
+    }
     // Header menu 
-    if(document.getElementsByClassName().length!=0){
+    if(document.getElementsByClassName('menu-btn').length!=0){
         let menuOpen = document.getElementsByClassName('menu-btn')[0];
         let menuWrap = document.getElementsByClassName('header_menu')[0];
         menuOpen.addEventListener('click', function (event) {
@@ -92,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Header menu accordion
     if(document.querySelector('.header_menu .accordion_btn')!=null){
         let menuAccordionBtn = document.querySelector('.header_menu .accordion_btn');
-        menuAccordionBtn.addEventListener('click', function () {
-            this.classList.toggle('active');
+            menuAccordionBtn.addEventListener('click', function () {
+                this.classList.toggle('active');
         });
     }
     if(document.querySelectorAll('.accordion').length!=0){
@@ -102,10 +71,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 let allAccordions = document.querySelectorAll('.accordion');
                 let allPanels = document.querySelectorAll('.panel');
                 let isActive = btn.classList.contains('active');
-        
                 allAccordions.forEach(acc => acc.classList.remove('active'));
-                allPanels.forEach(panel => panel.classList.remove('active'));
-        
+                allPanels.forEach(panel => panel.classList.remove('active'));   
                 if (!isActive) {
                     btn.classList.add('active');
                     let panel = btn.nextElementSibling;

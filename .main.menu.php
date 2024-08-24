@@ -1,0 +1,53 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"О компании", 
+		"company",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Резиденты", 
+		"residents",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Технологии AI", 
+		"techno",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Кейсы", 
+		"cases",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Блог", 
+		"blog",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты", 
+		"contacts",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Связь с нами", 
+		"",
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

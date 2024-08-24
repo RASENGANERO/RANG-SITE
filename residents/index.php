@@ -19,7 +19,58 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                 </div>
 
                 <div class="agency_cards">
-                    <div class="agency_card">
+                    <?php 
+                        $data = Functions::GetResidents();
+                        foreach($data as $item) {
+                    ?>
+                    <div class="agency_card"> 
+                             <img src="<?=$item['DETAIL_IMAGE']?>" alt="" class="agency_card-img" />
+                        <div class="agency_card-info">
+                            <div class="card_info-top">
+                                <h3><?=$item['NAME']?></h3>
+                                <b><?=$item['PROPERTIES']['SPECIAL_CODE'][0]?></b>
+                            </div>
+                            <div class="agency_card-body">
+                                <div class="agency_card-box">
+                                    <p><?=$item['PROPERTIES']['TYPE_CODE'][0]?></p>
+                                </div>
+                                <div class="agency_card-box">
+                                    <span>Образование</span>
+                                    <div class="agency_card-elements">
+                                        <?php 
+                                            foreach($item['PROPERTIES']['EDUCATION_CODE'] as $value) {
+                                        ?>
+                                            <p><?=$value?></p>    
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                                <div class="agency_card-box">
+                                    <span>Опыт работы</span>
+                                    <div class="agency_card-elements">
+                                        <?php 
+                                            foreach($item['PROPERTIES']['WORKEXPIRIENCE_CODE'] as $value) {
+                                        ?>
+                                            <p><?=$value?></p>    
+                                        <?php } ?>    
+                                    </div>
+                                </div>
+                                <div class="agency_card-box">
+                                    <span>Достижения</span>
+                                    <div class="agency_card-elements">
+                                        <?php 
+                                            foreach($item['PROPERTIES']['ACHIVMENTS_CODE'] as $value) {
+                                        ?>
+                                            <p><?=$value?></p>    
+                                        <?php } ?>    
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <?
+                        }
+                    ?>
+                    <!--<div class="agency_card">
                         <img src="<?=SITE_TEMPLATE_PATH?>/img/agency_card-img1.JPG" alt="" class="agency_card-img" />
                         <div class="agency_card-info">
                             <div class="card_info-top">
@@ -216,7 +267,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>

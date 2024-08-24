@@ -1,0 +1,1 @@
+<a href="tel:88007777777" class="contact_phone">8 800 777 77 77</a>

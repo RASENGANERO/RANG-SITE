@@ -7,6 +7,7 @@ p {
   text-decoration: none;
 }
 
+
 .wrapper {
   overflow: hidden;
   width: 100%;
@@ -150,7 +151,7 @@ header .header_menu {
   top: 100%;
   right: 0;
   max-height: 0;
-  width: 557px;
+  width: 560px;
   background: rgba(45, 41, 30, 0.6980392157);
   border: 1px solid #FFFFFF;
   opacity: 0;
@@ -222,6 +223,7 @@ header .header_menu .accordion_body a span {
   line-height: 26px;
   color: #FFF;
   text-transform: uppercase;
+  max-width: 267px;
 }
 header .header_menu-links {
   display: flex;
@@ -3657,7 +3659,7 @@ input::-webkit-inner-spin-button {
     padding-right: 100px;
   }
   header .header_menu {
-    width: 402px;
+    width: 405px;
   }
   .social-menu-text::before {
     left: -70px;
@@ -3899,7 +3901,7 @@ input::-webkit-inner-spin-button {
     width: 100px;
   }
   header .header_menu {
-    width: 366px;
+    width: 369px;
   }
   .menu_child button::before,
   .social-menu-text::before {
@@ -3917,6 +3919,7 @@ input::-webkit-inner-spin-button {
   .menu_child button
   {
     font-size: 16px;
+    font-weight: 200;
     line-height: 22px;
   }
   header .header_block .social_menu ul li img {
@@ -5075,6 +5078,12 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 1200px) {
+  .menu_child button
+  {
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 20px;
+  }
   .container {
     max-width: 992px;
     padding-left: 16px;
@@ -6161,6 +6170,9 @@ input::-webkit-inner-spin-button {
   }
 }
 @media (max-width: 992px) {
+  .menu_child>.contact-btn{
+    display: none;
+  }
   .social-menu-text {
     display: none;
   }
@@ -6195,9 +6207,6 @@ input::-webkit-inner-spin-button {
   }
   .menu_child:last-child {
     padding-left: 35px;
-  }
-  .menu_child button::before {
-    left: 0;
   }
   header .header_menu {
     width: 100%;
@@ -6714,7 +6723,7 @@ input::-webkit-inner-spin-button {
     padding-left: 16px;
   }
 }
-@media only screen and (max-width: 767px) {
+@media (max-width: 768px) {
   .breadcrumbs .container,
   .blog .container,
   .container {
@@ -8722,3 +8731,40 @@ input::-webkit-inner-spin-button {
     height: 403px;
   }
 }/*# sourceMappingURL=index.css.map */
+.innovativeSlider>div{
+  height: auto;
+}
+.marketingSlider>div{
+  height: auto;
+}
+.marketingSlider2>div{
+  height: auto;
+}
+.agencySlider>div{
+  height: auto;
+}
+.agency_card-elements{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.footer-inn-info{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.inn-text {
+  color: rgb(255, 255, 255);
+  font-family: 'Robotoflex';
+  font-size: 22px;
+  font-weight: 200;
+  line-height: 26px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.card_info-text-main{
+  
+}
