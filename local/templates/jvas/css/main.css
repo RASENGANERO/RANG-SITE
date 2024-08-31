@@ -20,6 +20,14 @@ p {
 	font-family: 'Sourcecode1'; 
 	src: url("/local/templates/jvas/fonts/SourceCodePro-Regular.ttf"); 
 }
+@font-face {
+	font-family: 'Resotho1'; 
+	src: url("/local/templates/jvas/fonts/Resotho-Extralight.woff") format('opentype'); 
+}
+@font-face {
+	font-family: 'Kharkivtone1'; 
+	src: url("/local/templates/jvas/fonts/Kharkiv-Tone.ttf"); 
+}
 body {
   background-color: #2d291e;
 }
@@ -2627,7 +2635,7 @@ header .header_menu-links .header_menu-social {
 .partner .count-block .count-item.count_item-end {
   border: none;
 }
-.partner .count-block .count-item img {
+.partner .count-block .count-item>a>img {
   height: 83px;
   -o-object-fit: contain;
      object-fit: contain;
@@ -2733,7 +2741,7 @@ header .header_menu-links .header_menu-social {
 }
 
 .new {
-  padding: 60px 0px 100px;
+  padding: 0px 0px 100px;
 }
 .new_block {
   display: flex;
@@ -8765,6 +8773,60 @@ input::-webkit-inner-spin-button {
   letter-spacing: 0%;
   text-align: left;
 }
-.card_info-text-main{
-  
+.item-text-budget{
+  color: rgb(255, 255, 255);
+  font-family: 'Resotho1';
+  font-size: 24px;  
+  font-weight: 200;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.content-item-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.item-text-name{
+  color: rgb(255, 255, 255);
+  font-family: 'Kharkivtone1';
+  font-size: 29px;
+  font-weight: 400;
+  line-height: 34px;  
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: uppercase;
+}
+.item-descr-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+.item-text-description{
+  color: rgb(255, 255, 255);
+  font-family: 'Sourceсode1';
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.item-urlbtn{
+
+}
+.content-item-down{
+  display: flex;
+  height: -webkit-fill-available;
+  align-items: end;
+  padding-bottom: 68px;
+}  
+.content-item-start{
+  display: flex;
+  height: -webkit-fill-available;
+  align-items: start;
+  padding-top: 50px;
+}                    
+.brand-url{
+  display: contents;
 }

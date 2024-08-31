@@ -20,6 +20,19 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/local/templates/jvas/functions/functi
     <link href="https://fonts.cdnfonts.com/css/kharkiv-tone" rel="stylesheet">
     <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/fonts/kharkiv-tone/stylesheet.css">
     <link href="https://fonts.cdnfonts.com/css/soyuz-grotesk" rel="stylesheet">-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/resotho" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/kharkiv-tone" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/kharkiv-tone/stylesheet.css">
+    <link href="https://fonts.cdnfonts.com/css/soyuz-grotesk" rel="stylesheet">
+
+
 	<?$APPLICATION->ShowHead();?>
 	<title><?$APPLICATION->ShowTitle();?></title>
 	<?$APPLICATION->ShowPanel();?>

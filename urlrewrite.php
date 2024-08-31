@@ -1,6 +1,14 @@
 <?php
 $arUrlRewrite=array (
-  2 => 
+  9 => 
+  array (
+    'CONDITION' => '#^/blog/(.+)/?$#',
+    'RULE' => 'ELEMENT_CODE=$1',
+    'ID' => '',
+    'PATH' => '/blog/index.php',
+    'SORT' => 100,
+  ),
+  0 => 
   array (
     'CONDITION' => '#^/commercial/',
     'RULE' => NULL,
@@ -8,7 +16,7 @@ $arUrlRewrite=array (
     'PATH' => '/commercial/index.php',
     'SORT' => 100,
   ),
-  8 => 
+  1 => 
   array (
     'CONDITION' => '#^/residents/',
     'RULE' => NULL,
@@ -16,7 +24,15 @@ $arUrlRewrite=array (
     'PATH' => '/residents/index.php',
     'SORT' => 100,
   ),
-  4 => 
+  11 => 
+  array (
+    'CONDITION' => '#^/services/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/services/index.php',
+    'SORT' => 100,
+  ),
+  2 => 
   array (
     'CONDITION' => '#^/services/',
     'RULE' => NULL,
@@ -24,7 +40,7 @@ $arUrlRewrite=array (
     'PATH' => '/services/index.php',
     'SORT' => 100,
   ),
-  5 => 
+  3 => 
   array (
     'CONDITION' => '#^/solution/',
     'RULE' => NULL,
@@ -32,7 +48,7 @@ $arUrlRewrite=array (
     'PATH' => '/solution/index.php',
     'SORT' => 100,
   ),
-  3 => 
+  4 => 
   array (
     'CONDITION' => '#^/contacts/',
     'RULE' => NULL,
@@ -40,7 +56,7 @@ $arUrlRewrite=array (
     'PATH' => '/contacts/index.php',
     'SORT' => 100,
   ),
-  6 => 
+  5 => 
   array (
     'CONDITION' => '#^/newsone/',
     'RULE' => NULL,
@@ -48,7 +64,7 @@ $arUrlRewrite=array (
     'PATH' => '/newsone/index.php',
     'SORT' => 100,
   ),
-  7 => 
+  6 => 
   array (
     'CONDITION' => '#^/newstwo/',
     'RULE' => NULL,
@@ -56,7 +72,7 @@ $arUrlRewrite=array (
     'PATH' => '/newstwo/index.php',
     'SORT' => 100,
   ),
-  1 => 
+  7 => 
   array (
     'CONDITION' => '#^/brand/',
     'RULE' => NULL,
@@ -64,7 +80,15 @@ $arUrlRewrite=array (
     'PATH' => '/brand/index.php',
     'SORT' => 100,
   ),
-  0 => 
+  10 => 
+  array (
+    'CONDITION' => '#^/blog/#',
+    'RULE' => '',
+    'ID' => 'bitrix:news',
+    'PATH' => '/blog/index.php',
+    'SORT' => 100,
+  ),
+  8 => 
   array (
     'CONDITION' => '#^/blog/',
     'RULE' => NULL,

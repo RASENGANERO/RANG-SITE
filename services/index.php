@@ -1,154 +1,114 @@
-<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
-<main>
-    <div class="marketing solution_marketing">
-        <div class="container">
-            <div class="breadcrumb_block">
-                <nav aria-label="breadcrumb" class="breadcrumb_block-nav">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Главная </a></li>
-                        <li class="breadcrumb-item"><a href="#">Услуги </a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Комплексные решения</li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="marketing_info">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/gradus.svg" alt="" />
-                <h2>Комплексные решения для роста вашего бизнеса</h2>
-                <p>от разработки стратегии до маркетинга 360°</p>
-            </div>
-            <div class="marketing_cards">
-                <div class="item">
-                    <div class="item_top">
-                        <h3>Брендинг</h3>
-                        <p>Запуск и перезапуск брендов</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>01.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing_img1.png" alt="" class="item_img" />
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <h3>Perfomance marketing</h3>
-                        <p>Горячая лидогенерация для бизнеса</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>02.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing_img2.png" alt="" class="item_img" />
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <h3>Брендформанс marketing</h3>
-                        <p>Создание спроса и генерация лидов</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>03.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing_img3.png" alt="" class="item_img" />
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <h3>PR</h3>
-                        <p>Популярность и медийность вашего бренда</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>04.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing_img4.png" alt="" class="item_img" />
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <h3>Контент</h3>
-                        <p>Создание контента различного формата: текст, видео, фото</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>05.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing_img5.png" alt="" class="item_img" />
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <h3>Глубинное исследование рынка</h3>
-                        <p>Сбор и анализ данных рынка</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>06.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/solution_marketing-img6.jpg" alt="" class="item_img" />
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <h3>Продакт marketing</h3>
-                        <p>Создание продукта необходимого рынку</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>07.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/solution_marketing-img7.png" alt="" class="item_img" />
-                </div>
-                <div class="item">
-                    <div class="item_top">
-                        <h3>Продакт дизайн</h3>
-                        <p>Создание функциональных и конверсионных UX/UI продуктов</p>
-                    </div>
-                    <div class="item_bottom">
-                        <span>08.</span>
-                        <a href="#">
-                            подробнее
-                            <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                            </svg>
-                        </a>
-                    </div>
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/solution_marketing-img8.png" alt="" class="item_img" />
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-<?php 
-require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
-?>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetTitle("");?><main>
+<div class="marketing solution_marketing">
+	<div class="container">
+		 <?$APPLICATION->IncludeComponent(
+				"bitrix:breadcrumb",
+				"breadchain",
+				Array(
+					"PATH" => "",
+					"SITE_ID" => "s1",
+					"START_FROM" => "0"
+				)
+			);?>
+		<div class="marketing_info">
+ 			<img src="/local/templates/jvas/img/gradus.svg" alt="">
+			<h2>Комплексные решения</h2>
+			<p>от разработки стратегии до маркетинга 360°</p>
+		</div>
+		 <?$APPLICATION->IncludeComponent(
+	"bitrix:news", 
+	"services", 
+	array(
+		"ADD_ELEMENT_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "Y",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "36000000",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"COMPONENT_TEMPLATE" => "services",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
+		"DETAIL_DISPLAY_TOP_PAGER" => "N",
+		"DETAIL_FIELD_CODE" => array(
+			0 => "CODE",
+			1 => "",
+		),
+		"DETAIL_PAGER_SHOW_ALL" => "Y",
+		"DETAIL_PAGER_TEMPLATE" => "",
+		"DETAIL_PAGER_TITLE" => "Страница",
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"DETAIL_SET_CANONICAL_URL" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "21",
+		"IBLOCK_TYPE" => "services",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"LIST_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"MESSAGE_404" => "",
+		"META_DESCRIPTION" => "-",
+		"META_KEYWORDS" => "-",
+		"NEWS_COUNT" => "20",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"SEF_MODE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_STATUS_404" => "Y",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "N",
+		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"USE_CATEGORIES" => "N",
+		"USE_FILTER" => "N",
+		"USE_PERMISSIONS" => "N",
+		"USE_RATING" => "N",
+		"USE_REVIEW" => "N",
+		"USE_RSS" => "N",
+		"USE_SEARCH" => "N",
+		"USE_SHARE" => "N",
+		"SEF_FOLDER" => "/services/",
+		"SEF_URL_TEMPLATES" => array(
+			"news" => "",
+			"section" => "#SECTION_ID#/",
+			"detail" => "#ELEMENT_CODE#/",
+		)
+	),
+	false
+);?> 
+
+	</div>
+</div>
+ </main>
+ <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

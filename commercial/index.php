@@ -4,17 +4,15 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 <main>
     <div class="hero main-hero commercial-hero">
         <div class="container">
-            <div class="breadcrumb_block">
-                <nav aria-label="breadcrumb" class="breadcrumb_block-nav">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Главная </a></li>
-                        <li class="breadcrumb-item">
-                            <a href="#">Услуги <span> /</span></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Построим отдел маркетинга и продаж</li>
-                    </ol>
-                </nav>
-            </div>
+            <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", 
+                        "breadchain", 
+                        Array(
+	                        "PATH" => "",
+		                    "SITE_ID" => "s1",
+		                    "START_FROM" => "0",
+	                    ),
+	                    false
+                    );?>
             <div class="hero_block">
                 <div class="title_hero title-main">
                     <h1>Построим эффективный коммерческий департамент</h1>

@@ -4,17 +4,15 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 <main>
     <div class="hero main-hero brend-hero">
         <div class="container">
-            <div class="breadcrumb_block">
-                <nav aria-label="breadcrumb" class="breadcrumb_block-nav">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Главная </a></li>
-                        <li class="breadcrumb-item">
-                            <a href="#">Услуги <span> /</span></a>
-                        </li>
-                        <li class="breadcrumb-item active" aria-current="page">Станьте автором собственного бренда</li>
-                    </ol>
-                </nav>
-            </div>
+            <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", 
+                "breadchain", 
+                Array(
+	                "PATH" => "",
+		            "SITE_ID" => "s1",
+		            "START_FROM" => "0",
+	                ),
+	            false
+            );?>
             <div class="hero_block">
                 <div class="title_hero title-main">
                     <h1>Станьте автором собственного бренда</h1>
@@ -456,35 +454,59 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             </div>
             <div class="tariff_block">
                 <div class="swiper tariffSlider">
+                    <?php
+                    $data = Functions::GetTarrifsByType('Тарифы запуска');
+                    ?>
                     <div class="swiper-wrapper">
+                        <?php
+                        $className = "";
+                        foreach($data as $item) {
+                            if($item['PROPERTIES']['TYPETEXT_CODE'][0] <= 1){
+                                $className='content-item-start';
+                            }
+                            else{
+                                $className='content-item-down';
+                            }
+                        ?>
                         <div class="swiper-slide">
-                            <div class="item item3">
+                            <div class="item">
                                 <div class="title_tarif">
-                                    <h5>От 250 000 в месяц + бюджет</h5>
-                                    <div class="tarif_info">
-                                        <h3>продукт</h3>
-                                        <h4>1. Анализ и разработка концепции продукта и рецептуры</h4>
-                                        <a href="#">собрать тариф <img src="<?=SITE_TEMPLATE_PATH?>/img/Vector1.svg" alt="" /></a>
+                                    <p class="item-text-budget"><?=$item['PROPERTIES']['BUDGET_CODE'][0]?></p>
+                                    <div class="<?=$className?>">
+                                        <div class="content-item-container">
+                                            <h1 class="item-text-name"><?=$item['NAME']?></h1>
+                                            <div class="item-descr-container">
+                                                <?php
+                                                    foreach ($item['PROPERTIES']['DATA_CODE'] as $info){
+                                                ?>
+                                                    <span class="item-text-description"><?=$info?></span>                                                  
+                                                <?    
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <a class="item-urlbtn" href="#">собрать тариф <img src="img/Vector1.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
+                        <?
+                        }
+                        ?>
+                        <!--<div class="swiper-slide">
                             <div class="item item_sec item4">
                                 <div class="title_tarif">
                                     <h5>От 200 000 в месяц + бюджет</h5>
                                     <h3>Производство</h3>
-                                    <h4>
+                                    <h4>1. Анализ и разработка концепции продукта и рецептуры
                                         1. Анализ и разработка концепции продукта и рецептуры
-                                        <br />
-                                        <br />
                                         2. Поиск поставщиков и запуск пилотной партии продукта
                                     </h4>
                                     <a href="#">собрать тариф <img src="<?=SITE_TEMPLATE_PATH?>/img/Vector1.svg" alt="" /></a>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide">
+                        </div>-->
+                        <!--<div class="swiper-slide">
                             <div class="item item3">
                                 <div class="title_tarif">
                                     <h5>От 100 000 в месяц + бюджет</h5>
@@ -520,7 +542,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                                     <a href="#">собрать тариф <img src="<?=SITE_TEMPLATE_PATH?>/img/Vector1.svg" alt="" /></a>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

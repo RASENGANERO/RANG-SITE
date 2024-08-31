@@ -8,9 +8,9 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                 <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", 
                         "breadchain", 
                         Array(
-	                        "PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
-		                    "SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
-		                    "START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+	                        "PATH" => "",
+		                    "SITE_ID" => "s1",
+		                    "START_FROM" => "0",
 	                    ),
 	                    false
                     );?>
@@ -18,7 +18,6 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                     <h2>Контакты</h2>
                     <h3>Мы на связи</h3>
                 </div>
-
                 <div class="contact_wrap">
                     <div class="contact_info">
                         <div class="contact_box">

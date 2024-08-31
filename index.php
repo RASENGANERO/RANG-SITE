@@ -69,40 +69,65 @@ $APPLICATION->SetTitle("Главная"); ?>
 		 <!-- Swiper -->
 		<div class="swiper agencySlider">
 			<div class="swiper-wrapper">
+		 		<?php 
+                    $data = Functions::GetResidents();
+                    foreach($data as $item) {
+                ?>
 				<div class="swiper-slide">
 					<div class="agency_wrap">
 						<div class="agencySlider-card">
- 							<img src="/local/templates/jvas/img/agency1.png" alt="" class="agencySlider-card-img">
+ 							<img src="<?=$item['PREVIEW_IMAGE']?>" alt="" class="agencySlider-card-img">
 							<div class="agencySlider-text">
 								<div class="agencySlider-titles">
-									<h2>Мартовская Ангелина Евгеньевна</h2>
-									<p>Резидент - президент</p>
+									<h2><?=$item['NAME']?></h2>
+									<p><?=$item['PROPERTIES']['SPECIAL_CODE'][0]?></p>
 								</div>
- 								<button class="agency_card-btn">регалии</button>
+ 								<button class="agency_card-btn">регалии
+								 	<svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    	<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
+                                    </svg>
+								</button>
 							</div>
 						</div>
 						<div class="card_info">
-							<p>Эксперт в области цифровой рекламы трафика и лидогенерации</p>
+							<p><?=$item['PROPERTIES']['TYPE_CODE'][0]?></p>
 							<div class="card_info-box">
 								<span class="card_info-text-main">Образование</span>
-								<p>2005 - 2008 МБА экономика и промышленность</p>
-								<p>2000 - 2005 МГУ политология и философия</p>
+								<?php 
+									foreach($item['PROPERTIES']['EDUCATION_CODE'] as $value) {
+                                ?>
+                                    <p><?=$value?></p>    
+                                <?php 
+								} 
+								?>
 							</div>
 							<div class="card_info-box">
 								<span class="card_info-text-main">Опыт работы</span>
-								<p>2008 - 2018 Директор еком направления СБЕРБАНК РОССИИ</p>
+								<?php 
+                                    foreach($item['PROPERTIES']['WORKEXPIRIENCE_CODE'] as $value) {
+                                ?>
+                                        <p><?=$value?></p>    
+                                <?php 
+								} 
+								?> 
 							</div>
 							<div class="card_info-box">
 								<span class="card_info-text-main">Достижения</span>
-								<p>Бюджет 2 млрд</p>
-								<p>Клиентов 200 млн</p>
-								<p>Доход от рекламы 100 трл</p>
-								
+								<?php 
+                                    foreach($item['PROPERTIES']['ACHIVMENTS_CODE'] as $value) {
+                                ?>
+                                    	<p><?=$value?></p>    
+                                <?php 
+								} 
+								?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="swiper-slide">
+				<?php 
+                    }
+                ?>
+				<!--<div class="swiper-slide">
 					<div class="agency_wrap">
 						<div class="agencySlider-card">
  							<img src="/local/templates/jvas/img/agency2.png" alt="" class="agencySlider-card-img">
@@ -316,7 +341,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</div>
@@ -751,15 +776,30 @@ $APPLICATION->SetTitle("Главная"); ?>
 <div class="partner">
 	<div class="container">
 		<div class="partner_info">
- <img src="/local/templates/jvas/img/logo2.svg" alt="">
+ 			<img src="/local/templates/jvas/img/logo2.svg" alt="">
 			<h2>РАНГ - официальный партнер</h2>
 		</div>
 	</div>
+	<?php 
+	$dataBrands=Functions::getBrands();
+	//echo "<pre style='color:white;'>";
+	//print_r(Functions::getBrands());
+	//echo "</pre>";
+	?>
 	<div class="count-block count-block3">
 		<div class="count-content">
 			<div class="swiper partnerSlider">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
+					<? foreach ($dataBrands as $branditem): ?>
+						<div class="swiper-slide">
+							<div class="count-item">
+									<a target="_blank" class="brand-url" href="<?=$branditem['URL']?>">
+										<img src="<?=$branditem['PREVIEW_IMAGE']?>" alt="">
+									</a>
+							</div>
+						</div>
+					<? endforeach; ?>
+					<!--<div class="swiper-slide">
 						<div class="count-item">
  <img src="/local/templates/jvas/img/partner-logo1.svg" alt="">
 						</div>
@@ -793,7 +833,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 						<div class="count-item count_item-end">
  <img src="/local/templates/jvas/img/partner-logo6.svg" alt="">
 						</div>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
