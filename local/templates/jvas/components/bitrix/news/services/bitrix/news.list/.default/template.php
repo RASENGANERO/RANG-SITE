@@ -16,6 +16,10 @@ $this->setFrameMode(true);
 	$k = 0;
 	$numbers = Functions::generateNumbers(count($arResult["ITEMS"])); 
 ?>
+<div class="container">
+	
+<div class="marketing solution_marketing">
+
 <div class="marketing_cards">
 	<?php 
 		foreach($arResult["ITEMS"] as $arItem) 
@@ -42,4 +46,7 @@ $this->setFrameMode(true);
 			$k += 1;
 		} 
 		?>
+</div>
+</div>
+
 </div>

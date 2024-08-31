@@ -1,6 +1,6 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("");?><main>
-<div class="marketing solution_marketing">
+$APPLICATION->SetTitle("");?>
+
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
 				"bitrix:breadcrumb",
@@ -11,11 +11,14 @@ $APPLICATION->SetTitle("");?><main>
 					"START_FROM" => "0"
 				)
 			);?>
+		<?php if ($APPLICATION->GetCurPage()=="services"):?>
 		<div class="marketing_info">
  			<img src="/local/templates/jvas/img/gradus.svg" alt="">
 			<h2>Комплексные решения</h2>
 			<p>от разработки стратегии до маркетинга 360°</p>
 		</div>
+		<?php endif;?>
+	</div>
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"services", 
@@ -108,7 +111,6 @@ $APPLICATION->SetTitle("");?><main>
 	false
 );?> 
 
-	</div>
-</div>
+
  </main>
  <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
