@@ -12,4 +12,74 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<?php echo html_entity_decode($arResult['DETAIL_TEXT']);?>
+<?php
+//echo "<pre style='color:white;'>";
+//print_r($arResult);
+//echo "<pre>";
+?>
+<div class="hero hero_services">
+	<div class="container">
+        <?$APPLICATION->IncludeComponent(
+				"bitrix:breadcrumb",
+				"breadchain",
+				Array(
+					"PATH" => "",
+					"SITE_ID" => "s1",
+					"START_FROM" => "0"
+				)
+		);?>
+    </div>
+		<div class="container">
+		<div class="hero_block">
+			<div class="title_hero">
+				<h3><?=$arResult['PREVIEW_TEXT']?></h3>
+				<h1><?=$arResult['NAME']?></h1>
+			</div>
+		</div>
+		</div>
+		<?php echo html_entity_decode($arResult['DETAIL_TEXT']);?>
+        <div class="marketing marketing1">
+		<div class="container">
+		<div class="marketing_info">
+ 			<img src="/local/templates/jvas/img/gradus.svg" alt="">
+			<h2>Комплексные решения для роста вашего бизнеса</h2>
+			<p>
+				 от разработки стратегии до маркетинга 360°
+			</p>
+		</div>
+		<?php
+		$services = Functions::GetServices();
+		?>
+		<div class="marketing_slider">
+			<div class="swiper marketingSlider">
+				<div class="swiper-wrapper">
+					<?php
+						foreach($services as $servItem){
+					?>
+					<div class="swiper-slide">
+						<div class="item">
+							<div class="item_top">
+								<h3><?=$servItem['NAME']?></h3>
+								<p><?=$servItem['PREVIEW_TEXT']?></p>
+							</div>
+							<div class="item_bottom">
+					 			<div class="market-block">
+					 				<a class="market-block-text" href="<?=$servItem['CODE']?>/">Подробнее</a> 
+					 					<svg class="arrow" width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        					<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
+                    					</svg>
+								</div> 
+							</div>
+							<img src="<?=$servItem['PREVIEW_IMAGE']?>" alt="" class="item_img">
+						</div>
+					</div>
+					<?
+						}
+					?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>

@@ -1,4 +1,6 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 CModule::IncludeModule('iblock');
 class Functions{
@@ -96,6 +98,45 @@ class Functions{
             }
         }
         return $numbers;
+    }
+
+
+    public static function GetServices() {
+        $iblockId = 21;
+        $arr = [];
+        $data = CIBlockElement::GetList(['ID' => 'ASC'], ['IBLOCK_ID' => $iblockId], false, false);
+        while ($res = $data->Fetch()) {
+            $elementId = $res['ID'];
+            $elementName = $res['NAME'];
+            $elementCode = $res['CODE'];
+            $elementText = $res['PREVIEW_TEXT'];
+            $properties = CIBlockElement::GetProperty($iblockId, $elementId, ['sort' => 'asc'], ['ACTIVE' => 'Y']);
+            $props = [];
+
+            while ($prop = $properties->Fetch()) {
+                // Проверяем, если свойство уже существует в массиве
+                if (!isset($props[$prop['CODE']])) {
+                    $props[$prop['CODE']] = []; // Инициализируем как массив
+                }
+                // Добавляем значение в массив свойств
+                $props[$prop['CODE']][] = $prop['VALUE'];
+            }
+            // Получаем изображения
+            $previewImageId = $res['PREVIEW_PICTURE']; // ID картинки анонса
+            $previewImage = CFile::GetFileArray($previewImageId);
+            $arr[] = [
+                'ID' => $elementId,
+                'NAME' => $elementName,
+                'CODE' => $elementCode,
+                'PREVIEW_TEXT' => $elementText,
+                'PROPERTIES' => $props,
+                'PREVIEW_IMAGE' => $previewImage ? $previewImage['SRC'] : null, // URL картинки анонса
+            ];
+        }
+        return $arr;
+    }
+    public static function addMail() {
+
     }
 
 }

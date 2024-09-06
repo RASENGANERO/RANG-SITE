@@ -17,7 +17,28 @@ function closeAlls(modal){
     let closeModalOut=modal.querySelector('.modal_bg');
     closeModalOut.addEventListener('click',() => closeModal(modal));       
 }
-
+function add_mailing(){
+    let dt = {
+        "type":"addmail",
+        "usermail":document.getElementById('subscribe-text').value
+    };
+    $.ajax({
+        url: '/ajax/ajax.php',
+        type: 'POST',
+        dataType: 'json',
+        data: dt,
+        success: function(response) {
+            document.getElementById('messform').textContent = response.message;
+            document.getElementById('messform').style = 'display:flex;';
+            setTimeout(()=>{
+                window.location.reload();
+            }, 2000);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 
 document.addEventListener('DOMContentLoaded', ()=>{
     if(document.getElementsByClassName('privacy_open2').length!=0){
@@ -766,5 +787,8 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 content.style.display = 'none';
             }
         });
+    }
+    if (document.getElementById('subscribe')!=null){
+        document.getElementById('subscribe').addEventListener('click', add_mailing);
     }
 });

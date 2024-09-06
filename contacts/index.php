@@ -130,13 +130,13 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                         );
                         ?>
                 </div>
-
                 <div class="subscribe">
                     <h2 class="subscribe_title">Подпишитесь на рассылку</h2>
                     <p class="subscribe_text">и узнавайте полезные новости из мира рекламы и маркетинга</p>
-                    <input type="text" placeholder="Укажите Ваш электронный адрес" class="subscribe_inp" />
-                    <button class="subscribe_btn">подписаться</button>
+                    <input id="subscribe-text" type="text" placeholder="Укажите Ваш электронный адрес" class="subscribe_inp" />
+                    <button id="subscribe" class="subscribe_btn">подписаться</button>
                     <p class="subscribe_text2">Нажимая на кнопку «подписаться», вы соглашаетесь с обработкой персональных данных</p>
+                    <p id="messform" class="subscribe-messform subscribe_text2">Нажимая на кнопку «подписаться», вы соглашаетесь с обработкой персональных данных</p>
                 </div>
             </div>
         </div>

@@ -21,7 +21,11 @@ $this->setFrameMode(true);
     </ul>
 <?php endif; ?>-->
 
-
+<?php
+echo "<pre style='color:white;'>";
+print_r($arResult['SECTION_DATA']);
+echo "</pre>";
+?>
 
 <div class="blog">
 	<div class="container">
@@ -29,7 +33,7 @@ $this->setFrameMode(true);
 			<div class="blog_navigator-wrap">
         		<div class="blog_navigator">
             		<h4>Навигатор</h4>
-            		<button class="blog_tab active">Все статьи</button>
+            		<a class="blog_tab active">Все статьи</a>
             		<?php foreach ($arResult['MAIN_SECTIONS'] as $arMainSection): ?>
                 		<button class="blog_tab"><?= htmlspecialchars($arMainSection['NAME']) ?></button> 
             		<?php endforeach; ?>

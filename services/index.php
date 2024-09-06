@@ -1,6 +1,8 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("");?>
-
+<main>
+<?php if ($APPLICATION->GetCurPage()=="/services/"):?>
+<div class="marketing solution_marketing marketing-pad-bot">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
 				"bitrix:breadcrumb",
@@ -11,14 +13,14 @@ $APPLICATION->SetTitle("");?>
 					"START_FROM" => "0"
 				)
 			);?>
-		<?php if ($APPLICATION->GetCurPage()=="services"):?>
 		<div class="marketing_info">
  			<img src="/local/templates/jvas/img/gradus.svg" alt="">
 			<h2>Комплексные решения</h2>
 			<p>от разработки стратегии до маркетинга 360°</p>
 		</div>
-		<?php endif;?>
 	</div>
+</div>
+	<?php endif;?>
 		 <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"services", 
@@ -32,7 +34,7 @@ $APPLICATION->SetTitle("");?>
 		"AJAX_OPTION_STYLE" => "Y",
 		"BROWSER_TITLE" => "-",
 		"CACHE_FILTER" => "N",
-		"CACHE_GROUPS" => "Y",
+		"CACHE_GROUPS" => "N",
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
@@ -88,10 +90,10 @@ $APPLICATION->SetTitle("");?>
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "ACTIVE_FROM",
+		"SORT_BY1" => "TIMESTAMP_X",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "DESC",
-		"SORT_ORDER2" => "ASC",
+		"SORT_ORDER2" => "DESC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "N",
@@ -110,7 +112,5 @@ $APPLICATION->SetTitle("");?>
 	),
 	false
 );?> 
-
-
  </main>
  <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

@@ -1,6 +1,5 @@
 <? require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("Главная"); ?>
-<main>
+$APPLICATION->SetTitle("Главная"); ?><main>
 <div class="hero main-hero">
 	<div class="container">
 		<p class="main-hero__text">
@@ -8,8 +7,9 @@ $APPLICATION->SetTitle("Главная"); ?>
 		</p>
 		<div class="hero_block">
 			<div class="title_hero title-main">
-				<h1>
-				МАРКЕТИНГОВОЕ <br>
+				<h3><br>
+				</h3>
+				<h1>МАРКЕТИНГОВОЕ <br>
 				 БУТИК АГЕНТСТВО </h1>
 				<h3>на базе AI инфраструктуры и инновационных IT решений</h3>
 			</div>
@@ -42,19 +42,19 @@ $APPLICATION->SetTitle("Главная"); ?>
 			<div class="count-item">
 				<h3>50+</h3>
 				<p>
-					НИШ, в которых мы эксперты
+					 НИШ, в которых мы эксперты
 				</p>
 			</div>
 			<div class="count-item">
 				<h3>2+</h3>
 				<p>
-					МЛРД, управление рекламным бюджетом
+					 МЛРД, управление рекламным бюджетом
 				</p>
 			</div>
 			<div class="count-item">
 				<h3>100+</h3>
 				<p>
-					МЛРД, заработали клиенты
+					 МЛРД, заработали клиенты
 				</p>
 			</div>
 		</div>
@@ -69,65 +69,70 @@ $APPLICATION->SetTitle("Главная"); ?>
 		 <!-- Swiper -->
 		<div class="swiper agencySlider">
 			<div class="swiper-wrapper">
-		 		<?php 
+				 <?php 
                     $data = Functions::GetResidents();
                     foreach($data as $item) {
                 ?>
 				<div class="swiper-slide">
 					<div class="agency_wrap">
 						<div class="agencySlider-card">
- 							<img src="<?=$item['PREVIEW_IMAGE']?>" alt="" class="agencySlider-card-img">
+ <img src="<?=$item['PREVIEW_IMAGE']?>" alt="" class="agencySlider-card-img">
 							<div class="agencySlider-text">
 								<div class="agencySlider-titles">
 									<h2><?=$item['NAME']?></h2>
-									<p><?=$item['PROPERTIES']['SPECIAL_CODE'][0]?></p>
+									<p>
+										 <?=$item['PROPERTIES']['SPECIAL_CODE'][0]?>
+									</p>
 								</div>
- 								<button class="agency_card-btn">регалии
-								 	<svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    	<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"></path>
-                                    </svg>
-								</button>
+ <button class="agency_card-btn">регалии </button>
 							</div>
 						</div>
 						<div class="card_info">
-							<p><?=$item['PROPERTIES']['TYPE_CODE'][0]?></p>
+							<p>
+								 <?=$item['PROPERTIES']['TYPE_CODE'][0]?>
+							</p>
 							<div class="card_info-box">
-								<span class="card_info-text-main">Образование</span>
+ <span class="card_info-text-main">Образование</span>
 								<?php 
 									foreach($item['PROPERTIES']['EDUCATION_CODE'] as $value) {
                                 ?>
-                                    <p><?=$value?></p>    
-                                <?php 
+								<p>
+									 <?=$value?>
+								</p>
+								 <?php 
 								} 
 								?>
 							</div>
 							<div class="card_info-box">
-								<span class="card_info-text-main">Опыт работы</span>
+ <span class="card_info-text-main">Опыт работы</span>
 								<?php 
                                     foreach($item['PROPERTIES']['WORKEXPIRIENCE_CODE'] as $value) {
                                 ?>
-                                        <p><?=$value?></p>    
-                                <?php 
+								<p>
+									 <?=$value?>
+								</p>
+								 <?php 
 								} 
-								?> 
+								?>
 							</div>
 							<div class="card_info-box">
-								<span class="card_info-text-main">Достижения</span>
+ <span class="card_info-text-main">Достижения</span>
 								<?php 
                                     foreach($item['PROPERTIES']['ACHIVMENTS_CODE'] as $value) {
                                 ?>
-                                    	<p><?=$value?></p>    
-                                <?php 
+								<p>
+									 <?=$value?>
+								</p>
+								 <?php 
 								} 
 								?>
 							</div>
 						</div>
 					</div>
 				</div>
-				<?php 
+				 <?php 
                     }
-                ?>
-				<!--<div class="swiper-slide">
+                ?> <!--<div class="swiper-slide">
 					<div class="agency_wrap">
 						<div class="agencySlider-card">
  							<img src="/local/templates/jvas/img/agency2.png" alt="" class="agencySlider-card-img">
@@ -351,7 +356,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 		<div class="innovative_block">
 			<div class="innovative_top">
 				<p>
-					Аккредитованная IT компания
+					 Аккредитованная IT компания
 				</p>
  <img src="/local/templates/jvas/img/innovative-logo.svg" alt="">
 			</div>
@@ -359,7 +364,7 @@ $APPLICATION->SetTitle("Главная"); ?>
  <img src="/local/templates/jvas/img/logo.svg" alt="">
 				<h2>Инновационные технологии для точных решений</h2>
 				<p>
-					Технологичный подход в реализации вопросов бизнеса
+					 Технологичный подход в реализации вопросов бизнеса
 				</p>
 			</div>
 		</div>
@@ -380,7 +385,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_info">
 								<h4>IT аккредитация</h4>
 								<p>
-									Наша компания прошла IT аккредитация что дает нам право заявлять о своей экспертности и гарантии для вас работы с нами
+									 Наша компания прошла IT аккредитация что дает нам право заявлять о своей экспертности и гарантии для вас работы с нами
 								</p>
 							</div>
 						</div>
@@ -391,7 +396,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_info">
 								<h4>9 резидентов</h4>
 								<p>
-									Экперты с глубоким знаниям в области маркетинга и рекламы занимающие ТОП позиции в крупных компаниях со стажем 5+ лет
+									 Экперты с глубоким знаниям в области маркетинга и рекламы занимающие ТОП позиции в крупных компаниях со стажем 5+ лет
 								</p>
 							</div>
 						</div>
@@ -402,7 +407,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_info">
 								<h4>AI инфраструктура</h4>
 								<p>
-									Собственная запатентированная технология позволяющая реализовать 100% точную маркетинговую стратегию и запустить рекламу
+									 Собственная запатентированная технология позволяющая реализовать 100% точную маркетинговую стратегию и запустить рекламу
 								</p>
 							</div>
 						</div>
@@ -413,7 +418,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_info">
 								<h4>BIG DATA</h4>
 								<p>
-									Собственный запатентированный сервис позволяющий получить статистические данные из достоверных источников и обработать с целью 100% картины рынка
+									 Собственный запатентированный сервис позволяющий получить статистические данные из достоверных источников и обработать с целью 100% картины рынка
 								</p>
 							</div>
 						</div>
@@ -424,7 +429,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_info">
 								<h4>Прозрачная отчетность и наглядные результаты</h4>
 								<p>
-									Мы за цифры, а не процессы поэтому вы видите результаты в цифровом эквиваленте которые демонстрируются на дашборде
+									 Мы за цифры, а не процессы поэтому вы видите результаты в цифровом эквиваленте которые демонстрируются на дашборде
 								</p>
 							</div>
 						</div>
@@ -435,7 +440,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_info">
 								<h4>AI зрение</h4>
 								<p>
-									Сервис позволяющий оценить ваш продукт перед выпуском на рынок и получить достоверную обратную связь от респондентов
+									 Сервис позволяющий оценить ваш продукт перед выпуском на рынок и получить достоверную обратную связь от респондентов
 								</p>
 							</div>
 						</div>
@@ -455,7 +460,7 @@ $APPLICATION->SetTitle("Главная"); ?>
  <img src="/local/templates/jvas/img/logo.svg" alt="">
 				<h2>вербуем аудиторию через креативный подход</h2>
 				<p>
-					Рекламная коммуникация через воздействие на сознание
+					 Рекламная коммуникация через воздействие на сознание
 				</p>
 			</div>
 			<div class="audience_slider">
@@ -475,7 +480,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 								<div class="item_info">
 									<h4>методы нейромаркетинга</h4>
 									<p>
-										Наша компания прошла IT аккредитация что дает нам право заявлять о своей экспертности и гарантии для вас работы с нами
+										 Наша компания прошла IT аккредитация что дает нам право заявлять о своей экспертности и гарантии для вас работы с нами
 									</p>
 								</div>
 							</div>
@@ -486,7 +491,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 								<div class="item_info">
 									<h4>поиск ценностей и смыслов</h4>
 									<p>
-										Экперты с глубоким знаниям в области маркетинга и рекламы занимающие ТОП позиции в крупных компаниях со стажем 5+ лет
+										 Экперты с глубоким знаниям в области маркетинга и рекламы занимающие ТОП позиции в крупных компаниях со стажем 5+ лет
 									</p>
 								</div>
 							</div>
@@ -497,7 +502,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 								<div class="item_info">
 									<h4>коммуникация с аудиторией на их языке</h4>
 									<p>
-										Собственная запатентированная технология позволяющая реализовать 100% точную маркетинговую стратегию и запустить рекламу
+										 Собственная запатентированная технология позволяющая реализовать 100% точную маркетинговую стратегию и запустить рекламу
 									</p>
 								</div>
 							</div>
@@ -508,7 +513,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 								<div class="item_info">
 									<h4>трансляция аудитории их ожиданий</h4>
 									<p>
-										Собственный запатентированный сервис позволяющий получить статистические данные из достоверных источников и обработать с целью 100% картины рынка
+										 Собственный запатентированный сервис позволяющий получить статистические данные из достоверных источников и обработать с целью 100% картины рынка
 									</p>
 								</div>
 							</div>
@@ -519,7 +524,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 								<div class="item_info">
 									<h4>психология потребителей</h4>
 									<p>
-										Мы за цифры, а не процессы поэтому вы видите результаты в цифровом эквиваленте которые демонстрируются на дашборде
+										 Мы за цифры, а не процессы поэтому вы видите результаты в цифровом эквиваленте которые демонстрируются на дашборде
 									</p>
 								</div>
 							</div>
@@ -536,90 +541,42 @@ $APPLICATION->SetTitle("Главная"); ?>
 <div class="marketing marketing1">
 	<div class="container">
 		<div class="marketing_info">
- <img src="/local/templates/jvas/img/gradus.svg" alt="">
+ 			<img src="/local/templates/jvas/img/gradus.svg" alt="">
 			<h2>Комплексные решения для роста вашего бизнеса</h2>
 			<p>
-				от разработки стратегии до маркетинга 360°
+				 от разработки стратегии до маркетинга 360°
 			</p>
 		</div>
+		<?php
+		$services = Functions::GetServices();
+		?>
 		<div class="marketing_slider">
 			<div class="swiper marketingSlider">
 				<div class="swiper-wrapper">
+					<?php
+						foreach($services as $servItem){
+					?>
+
 					<div class="swiper-slide">
 						<div class="item">
 							<div class="item_top">
-								<h3>Брендинг</h3>
-								<p>
-									Запуск и перезапуск брендов
-								</p>
+								<h3><?=$servItem['NAME']?></h3>
+								<p><?=$servItem['PREVIEW_TEXT']?></p>
 							</div>
 							<div class="item_bottom">
-								 01. <a href="#">
-								подробнее </a>
+					 			<div class="market-block">
+					 				<a class="market-block-text" href="<?=$servItem['CODE']?>/">Подробнее</a> 
+					 					<svg class="arrow" width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        					<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
+                    					</svg>
+								</div> 
 							</div>
- <img src="/local/templates/jvas/img/marketing_img1.png" alt="" class="item_img">
+							<img src="<?=$servItem['PREVIEW_IMAGE']?>" alt="" class="item_img">
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="item">
-							<div class="item_top">
-								<h3>Perfomance marketing</h3>
-								<p>
-									Горячая лидогенерация для бизнеса
-								</p>
-							</div>
-							<div class="item_bottom">
-								 02. <a href="#">
-								подробнее </a>
-							</div>
- <img src="/local/templates/jvas/img/marketing_img2.png" alt="" class="item_img">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="item">
-							<div class="item_top">
-								<h3>Брендформанс marketing</h3>
-								<p>
-									Создание спроса и генерация лидов
-								</p>
-							</div>
-							<div class="item_bottom">
-								 03. <a href="#">
-								подробнее </a>
-							</div>
- <img src="/local/templates/jvas/img/marketing_img3.png" alt="" class="item_img">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="item">
-							<div class="item_top">
-								<h3>PR</h3>
-								<p>
-									Популярность и медийность вашего бренда
-								</p>
-							</div>
-							<div class="item_bottom">
-								 04. <a href="#">
-								подробнее </a>
-							</div>
- <img src="/local/templates/jvas/img/marketing_img4.png" alt="" class="item_img">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="item">
-							<div class="item_top">
-								<h3>Контент</h3>
-								<p>
-									Создание контента различного формата: текст, видео, фото
-								</p>
-							</div>
-							<div class="item_bottom">
-								 05. <a href="#">
-								подробнее </a>
-							</div>
- <img src="/local/templates/jvas/img/marketing_img5.png" alt="" class="item_img">
-						</div>
-					</div>
+					<?
+						}
+					?>
 				</div>
 			</div>
 		</div>
@@ -629,11 +586,9 @@ $APPLICATION->SetTitle("Главная"); ?>
 	<div class="container">
 		<div class="audience_block">
 			<div class="title">
- <img src="/local/templates/jvas/img/logo.svg" alt="">
+ 				<img src="/local/templates/jvas/img/logo.svg" alt="">
 				<h2>Станьте автором собственного бренда</h2>
-				<p>
-					От разработки идеи до присутствия на полках
-				</p>
+				<p>От разработки идеи до присутствия на полках</p>
 			</div>
 			<div class="audience_info">
 				<ul>
@@ -643,7 +598,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 					<li>Корма для животных</li>
 					<li>Бытовая химия</li>
 				</ul>
- <a href="#" class="audience_link">перейти</a>
+ 				<a href="#" class="audience_link">перейти</a>
 			</div>
 		</div>
 	</div>
@@ -699,7 +654,7 @@ $APPLICATION->SetTitle("Главная"); ?>
  <img src="/local/templates/jvas/img/gradus.svg" alt="">
 			<h2>Результаты эффективного маркетинга в цифрах</h2>
 			<p>
-				Наглядно демонстрируем результаты кейсов наших клиентов решаем внештатные ситуации через профессионализм и гибкий подход к процессам Поэтому достигаем высоких результатов для каждого
+				 Наглядно демонстрируем результаты кейсов наших клиентов решаем внештатные ситуации через профессионализм и гибкий подход к процессам Поэтому достигаем высоких результатов для каждого
 			</p>
 		</div>
 		<div class="marketing_slider marketing_slider2">
@@ -711,7 +666,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
@@ -726,7 +681,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
@@ -741,7 +696,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
@@ -756,7 +711,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
@@ -776,64 +731,24 @@ $APPLICATION->SetTitle("Главная"); ?>
 <div class="partner">
 	<div class="container">
 		<div class="partner_info">
- 			<img src="/local/templates/jvas/img/logo2.svg" alt="">
+ <img src="/local/templates/jvas/img/logo2.svg" alt="">
 			<h2>РАНГ - официальный партнер</h2>
 		</div>
 	</div>
-	<?php 
+	 <?php 
 	$dataBrands=Functions::getBrands();
-	//echo "<pre style='color:white;'>";
-	//print_r(Functions::getBrands());
-	//echo "</pre>";
 	?>
 	<div class="count-block count-block3">
 		<div class="count-content">
 			<div class="swiper partnerSlider">
 				<div class="swiper-wrapper">
-					<? foreach ($dataBrands as $branditem): ?>
-						<div class="swiper-slide">
-							<div class="count-item">
-									<a target="_blank" class="brand-url" href="<?=$branditem['URL']?>">
-										<img src="<?=$branditem['PREVIEW_IMAGE']?>" alt="">
-									</a>
-							</div>
-						</div>
-					<? endforeach; ?>
-					<!--<div class="swiper-slide">
-						<div class="count-item">
- <img src="/local/templates/jvas/img/partner-logo1.svg" alt="">
-						</div>
-					</div>
+					 <? foreach ($dataBrands as $branditem): ?>
 					<div class="swiper-slide">
 						<div class="count-item">
- <img src="/local/templates/jvas/img/partner-logo2.svg" alt="">
+ 							<a target="_blank" class="brand-url" href="<?=$branditem['URL']?>"> <img src="<?=$branditem['PREVIEW_IMAGE']?>" alt=""> </a>
 						</div>
 					</div>
-					<div class="swiper-slide">
-						<div class="count-item">
- <img src="/local/templates/jvas/img/partner-logo3.png" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="count-item">
- <img src="/local/templates/jvas/img/partner-logo4.png" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="count-item">
- <img src="/local/templates/jvas/img/partner-logo7.svg" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="count-item">
- <img src="/local/templates/jvas/img/partner-logo5.svg" alt="">
-						</div>
-					</div>
-					<div class="swiper-slide">
-						<div class="count-item count_item-end">
- <img src="/local/templates/jvas/img/partner-logo6.svg" alt="">
-						</div>
-					</div>-->
+					 <? endforeach; ?>
 				</div>
 			</div>
 		</div>
@@ -844,36 +759,34 @@ $APPLICATION->SetTitle("Главная"); ?>
 	<div class="container">
 		<div class="available_block">
 			<div class="title">
- <img src="/local/templates/jvas/img/logo.svg" alt="">
+ 				<img src="/local/templates/jvas/img/logo.svg" alt="">
 				<h2>Слово бизнесу:</h2>
 				<h3>отзывы и рекомендации</h3>
 			</div>
 			<div class="item_all no-scrollbar">
 				<div class="item">
 					<h3>Ближе к звЁздам</h3>
-					<p>
-						Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ
-					</p>
- <a href="#">читать <img src="/local/templates/jvas/img/Vector1.svg" alt=""></a>
+					<p>Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ</p>
+ 					<a href="#">читать <img src="/local/templates/jvas/img/Vector1.svg" alt=""></a>
 				</div>
 				<div class="item">
 					<h3>Создание сайтов интернет магазинов</h3>
 					<p>
-						Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ
+						 Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ
 					</p>
  <a href="#">читать <img src="/local/templates/jvas/img/Vector1.svg" alt=""></a>
 				</div>
 				<div class="item">
 					<h3>Ближе к звЁздам</h3>
 					<p>
-						Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ
+						 Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ
 					</p>
  <a href="#">читать <img src="/local/templates/jvas/img/Vector1.svg" alt=""></a>
 				</div>
 				<div class="item">
 					<h3>Ближе к звЁздам</h3>
 					<p>
-						Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ
+						 Личные связи для безграничных возможностей с представителями шоу бизнеса и звездами блогинга главными редакторами отраслевых и федеральных СМИ
 					</p>
  <a href="#">читать <img src="/local/templates/jvas/img/Vector1.svg" alt=""></a>
 				</div>
@@ -891,7 +804,7 @@ $APPLICATION->SetTitle("Главная"); ?>
  <img src="/local/templates/jvas/img/gradus.svg" alt="">
 			<h2>Библиотека рекламщика - новости из мира рекламы и маркетинга</h2>
 			<p>
-				Авторский контент для пользы вашему бизнесу и конверсионных продаж
+				 Авторский контент для пользы вашему бизнесу и конверсионных продаж
 			</p>
 		</div>
 		<div class="marketing_slider marketing_slider2">
@@ -903,7 +816,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
@@ -918,7 +831,7 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
@@ -933,32 +846,30 @@ $APPLICATION->SetTitle("Главная"); ?>
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
- <a href="new.html">
-								читать </a>
+ 								<a href="new.html">читать</a>
 							</div>
 						</div>
 					</div>
 					<div class="swiper-slide">
 						<div class="item">
- <img src="/local/templates/jvas/img/marketing2-img1.png" alt="" class="item_img"> <img src="/local/templates/jvas/img/marketing2-img-mob1.png" alt="" class="item_img-mob">
+ 							<img src="/local/templates/jvas/img/marketing2-img1.png" alt="" class="item_img"> <img src="/local/templates/jvas/img/marketing2-img-mob1.png" alt="" class="item_img-mob">
 							<div class="item_top">
 								<h3>Как повысить конверсии на сайте без бюджета</h3>
 								<p>
-									Партизанский маркетинг в Девелоперской компании
+									 Партизанский маркетинг в Девелоперской компании
 								</p>
 							</div>
 							<div class="item_bottom">
- <a href="new2.html">
-								смотреть </a>
+ 								<a href="new2.html">смотреть </a>
 							</div>
 						</div>
 					</div>
 					<div class="swiper-slide">
- <a href="#" class="marketing_slider2-btn">Смотреть все</a>
+ 						<a href="#" class="marketing_slider2-btn">Смотреть все</a>
 					</div>
 				</div>
 			</div>

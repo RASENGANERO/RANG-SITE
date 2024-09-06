@@ -24,19 +24,11 @@ $arUrlRewrite=array (
     'PATH' => '/residents/index.php',
     'SORT' => 100,
   ),
-  11 => 
+  13 => 
   array (
     'CONDITION' => '#^/services/#',
     'RULE' => '',
     'ID' => 'bitrix:news',
-    'PATH' => '/services/index.php',
-    'SORT' => 100,
-  ),
-  2 => 
-  array (
-    'CONDITION' => '#^/services/',
-    'RULE' => NULL,
-    'ID' => '',
     'PATH' => '/services/index.php',
     'SORT' => 100,
   ),

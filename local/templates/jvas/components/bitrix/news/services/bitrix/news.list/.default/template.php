@@ -18,7 +18,7 @@ $this->setFrameMode(true);
 ?>
 <div class="container">
 	
-<div class="marketing solution_marketing">
+<div class="marketing solution_marketing marketing-pad-top">
 
 <div class="marketing_cards">
 	<?php 
@@ -35,10 +35,12 @@ $this->setFrameMode(true);
 				
 				<div class="item_bottom">
 					 <span><?=$numbers[$k]?></span>
-					 <a href="<?=$arItem['CODE']?>/">подробнее</a> 
-					 <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
-                    </svg> 
+					 <div class="market-block">
+					 	<a class="market-block-text" href="<?=$arItem['CODE']?>/">Подробнее</a> 
+					 	<svg class="arrow" width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        	<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
+                    	</svg>
+					</div> 
 				</div>
 				<img src="<?=$arItem['PREVIEW_PICTURE']['SRC']?>" alt="" class="item_img">
 			</div>
@@ -46,7 +48,7 @@ $this->setFrameMode(true);
 			$k += 1;
 		} 
 		?>
-</div>
+	</div>
 </div>
 
 </div>
