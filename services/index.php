@@ -1,18 +1,18 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetTitle("");?>
-<main>
+$APPLICATION->SetTitle("");?><main>
 <?php if ($APPLICATION->GetCurPage()=="/services/"):?>
 <div class="marketing solution_marketing marketing-pad-bot">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
-				"bitrix:breadcrumb",
-				"breadchain",
-				Array(
-					"PATH" => "",
-					"SITE_ID" => "s1",
-					"START_FROM" => "0"
-				)
-			);?>
+			"bitrix:breadcrumb", 
+		 	"breadchain", 
+		 	Array(
+				"PATH" => "",	// Путь, для которого будет построена навигационная цепочка (по умолчанию, текущий путь)
+				"SITE_ID" => "s1",	// Cайт (устанавливается в случае многосайтовой версии, когда DOCUMENT_ROOT у сайтов разный)
+				"START_FROM" => "0",	// Номер пункта, начиная с которого будет построена навигационная цепочка
+			),
+			false
+		);?>
 		<div class="marketing_info">
  			<img src="/local/templates/jvas/img/gradus.svg" alt="">
 			<h2>Комплексные решения</h2>
@@ -20,18 +20,18 @@ $APPLICATION->SetTitle("");?>
 		</div>
 	</div>
 </div>
-	<?php endif;?>
-		 <?$APPLICATION->IncludeComponent(
+<?php endif;?> 
+ <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"services", 
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
-		"AJAX_MODE" => "Y",
+		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_STYLE" => "N",
 		"BROWSER_TITLE" => "-",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "N",
@@ -85,6 +85,7 @@ $APPLICATION->SetTitle("");?>
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Новости",
 		"PREVIEW_TRUNCATE_LEN" => "",
+		"SEF_FOLDER" => "/services/",
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
@@ -103,14 +104,11 @@ $APPLICATION->SetTitle("");?>
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
-		"SEF_FOLDER" => "/services/",
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
-			"section" => "#SECTION_ID#/",
+			"section" => "#SECTION_CODE#/",
 			"detail" => "#ELEMENT_CODE#/",
 		)
 	),
 	false
-);?> 
- </main>
- <?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?> </main><?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

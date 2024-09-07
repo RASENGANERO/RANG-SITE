@@ -21,11 +21,11 @@ $APPLICATION->SetTitle("");
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
-		"AJAX_MODE" => "Y",
+		"AJAX_MODE" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"AJAX_OPTION_HISTORY" => "N",
 		"AJAX_OPTION_JUMP" => "N",
-		"AJAX_OPTION_STYLE" => "Y",
+		"AJAX_OPTION_STYLE" => "N",
 		"BROWSER_TITLE" => "-",
 		"CACHE_FILTER" => "N",
 		"CACHE_GROUPS" => "N",
@@ -98,13 +98,22 @@ $APPLICATION->SetTitle("");
 		"USE_SHARE" => "N",
 		"COMPONENT_TEMPLATE" => "blograng",
 		"SEF_FOLDER" => "/blog/",
+		"FILTER_FIELD_CODE" => array(
+			0 => "ID",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "CHECK_READ",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
-			"section" => "#SECTION_ID#/",
-			"detail" => "#ELEMENT_CODE#/",
+			"section" => "#SECTION_CODE#/",
+			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 		)
 	),
 	false
-);?> </main><?php 
+);?> </main>
+<?php 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");
 ?>

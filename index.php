@@ -76,7 +76,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 				<div class="swiper-slide">
 					<div class="agency_wrap">
 						<div class="agencySlider-card">
- <img src="<?=$item['PREVIEW_IMAGE']?>" alt="" class="agencySlider-card-img">
+							<img src="<?=$item['PREVIEW_IMAGE']?>" alt="" class="agencySlider-card-img">
 							<div class="agencySlider-text">
 								<div class="agencySlider-titles">
 									<h2><?=$item['NAME']?></h2>
@@ -84,7 +84,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 										 <?=$item['PROPERTIES']['SPECIAL_CODE'][0]?>
 									</p>
 								</div>
- <button class="agency_card-btn">регалии </button>
+ 								<button class="agency_card-btn">регалии </button>
 							</div>
 						</div>
 						<div class="card_info">
@@ -92,7 +92,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 								 <?=$item['PROPERTIES']['TYPE_CODE'][0]?>
 							</p>
 							<div class="card_info-box">
- <span class="card_info-text-main">Образование</span>
+ 								<span class="card_info-text-main">Образование</span>
 								<?php 
 									foreach($item['PROPERTIES']['EDUCATION_CODE'] as $value) {
                                 ?>
@@ -104,7 +104,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 								?>
 							</div>
 							<div class="card_info-box">
- <span class="card_info-text-main">Опыт работы</span>
+ 								<span class="card_info-text-main">Опыт работы</span>
 								<?php 
                                     foreach($item['PROPERTIES']['WORKEXPIRIENCE_CODE'] as $value) {
                                 ?>
@@ -116,7 +116,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 								?>
 							</div>
 							<div class="card_info-box">
- <span class="card_info-text-main">Достижения</span>
+ 								<span class="card_info-text-main">Достижения</span>
 								<?php 
                                     foreach($item['PROPERTIES']['ACHIVMENTS_CODE'] as $value) {
                                 ?>
@@ -132,221 +132,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 				</div>
 				 <?php 
                     }
-                ?> <!--<div class="swiper-slide">
-					<div class="agency_wrap">
-						<div class="agencySlider-card">
- 							<img src="/local/templates/jvas/img/agency2.png" alt="" class="agencySlider-card-img">
-							<div class="agencySlider-text">
-								<div class="agencySlider-titles">
-									<h2>Мухаметдиннова Виссариона Константиновна</h2>
-									<p>
-										Резидент аналитического направления
-									</p>
-								</div>
- <button class="agency_card-btn">
-								регалии </button>
-							</div>
-						</div>
-						<div class="card_info">
-							<p>
-								Эксперт в области цифровой рекламы трафика и лидогенерации
-							</p>
-							<div class="card_info-box">
-								 Образование
-								<p>
-									 2005 - 2008 МБА экономика и промышленность <br>
-									 2000 - 2005 МГУ политология и философия
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Опыт работы
-								<p>
-									2008 - 2018 Директор еком направления СБЕРБАНК РОССИИ
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Достижения
-								<p>
-									 Бюджет 2 млрд <br>
-									 Клиентов 200 млн <br>
-									 Доход от рекламы 100 трл
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="agency_wrap">
-						<div class="agencySlider-card">
- <img src="/local/templates/jvas/img/agency3.png" alt="" class="agencySlider-card-img">
-							<div class="agencySlider-text">
-								<div class="agencySlider-titles">
-									<h2>Иванов Иван Иванович</h2>
-									<p>
-										Резидент бренд коммуникации
-									</p>
-								</div>
- <button class="agency_card-btn">
-								регалии </button>
-							</div>
-						</div>
-						<div class="card_info">
-							<p>
-								Эксперт в области цифровой рекламы трафика и лидогенерации
-							</p>
-							<div class="card_info-box">
-								 Образование
-								<p>
-									 2005 - 2008 МБА экономика и промышленность <br>
-									 2000 - 2005 МГУ политология и философия
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Опыт работы
-								<p>
-									2008 - 2018 Директор еком направления СБЕРБАНК РОССИИ
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Достижения
-								<p>
-									 Бюджет 2 млрд <br>
-									 Клиентов 200 млн <br>
-									 Доход от рекламы 100 трл
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="agency_wrap">
-						<div class="agencySlider-card">
- <img src="/local/templates/jvas/img/agency4.png" alt="" class="agencySlider-card-img">
-							<div class="agencySlider-text">
-								<div class="agencySlider-titles">
-									<h2>Петрова Ольга Васильевна</h2>
-									<p>
-										Резидент Digital направления
-									</p>
-								</div>
- <button class="agency_card-btn">
-								регалии </button>
-							</div>
-						</div>
-						<div class="card_info">
-							<p>
-								Эксперт в области цифровой рекламы трафика и лидогенерации
-							</p>
-							<div class="card_info-box">
-								 Образование
-								<p>
-									 2005 - 2008 МБА экономика и промышленность <br>
-									 2000 - 2005 МГУ политология и философия
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Опыт работы
-								<p>
-									2008 - 2018 Директор еком направления СБЕРБАНК РОССИИ
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Достижения
-								<p>
-									 Бюджет 2 млрд <br>
-									 Клиентов 200 млн <br>
-									 Доход от рекламы 100 трл
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="agency_wrap">
-						<div class="agencySlider-card">
- <img src="/local/templates/jvas/img/agency1.png" alt="" class="agencySlider-card-img">
-							<div class="agencySlider-text">
-								<div class="agencySlider-titles">
-									<h2>Мартовская Ангелина Евгеньевна</h2>
-									<p>
-										Резидент - президент
-									</p>
-								</div>
- <button class="agency_card-btn">
-								регалии </button>
-							</div>
-						</div>
-						<div class="card_info">
-							<p>
-								Эксперт в области цифровой рекламы трафика и лидогенерации
-							</p>
-							<div class="card_info-box">
-								 Образование
-								<p>
-									 2005 - 2008 МБА экономика и промышленность <br>
-									 2000 - 2005 МГУ политология и философия
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Опыт работы
-								<p>
-									2008 - 2018 Директор еком направления СБЕРБАНК РОССИИ
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Достижения
-								<p>
-									 Бюджет 2 млрд <br>
-									 Клиентов 200 млн <br>
-									 Доход от рекламы 100 трл
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="agency_wrap">
-						<div class="agencySlider-card">
- <img src="/local/templates/jvas/img/agency2.png" alt="" class="agencySlider-card-img">
-							<div class="agencySlider-text">
-								<div class="agencySlider-titles">
-									<h2>Мухаметдиннова Виссариона Константиновна</h2>
-									<p>
-										Резидент аналитического направления
-									</p>
-								</div>
- <button class="agency_card-btn">
-								регалии </button>
-							</div>
-						</div>
-						<div class="card_info">
-							<p>
-								Эксперт в области цифровой рекламы трафика и лидогенерации
-							</p>
-							<div class="card_info-box">
-								 Образование
-								<p>
-									 2005 - 2008 МБА экономика и промышленность <br>
-									 2000 - 2005 МГУ политология и философия
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Опыт работы
-								<p>
-									2008 - 2018 Директор еком направления СБЕРБАНК РОССИИ
-								</p>
-							</div>
-							<div class="card_info-box">
-								 Достижения
-								<p>
-									 Бюджет 2 млрд <br>
-									 Клиентов 200 млн <br>
-									 Доход от рекламы 100 трл
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>-->
+                ?>
 			</div>
 		</div>
 	</div>
@@ -355,17 +141,13 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 	<div class="container">
 		<div class="innovative_block">
 			<div class="innovative_top">
-				<p>
-					 Аккредитованная IT компания
-				</p>
- <img src="/local/templates/jvas/img/innovative-logo.svg" alt="">
+				<p>Аккредитованная IT компания</p>
+ 				<img src="/local/templates/jvas/img/innovative-logo.svg" alt="">
 			</div>
 			<div class="title">
- <img src="/local/templates/jvas/img/logo.svg" alt="">
+ 				<img src="/local/templates/jvas/img/logo.svg" alt="">
 				<h2>Инновационные технологии для точных решений</h2>
-				<p>
-					 Технологичный подход в реализации вопросов бизнеса
-				</p>
+				<p>Технологичный подход в реализации вопросов бизнеса</p>
 			</div>
 		</div>
 		<div class="innovative_slider">
@@ -548,7 +330,9 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 			</p>
 		</div>
 		<?php
+		$k = 0;
 		$services = Functions::GetServices();
+		$numbers = Functions::generateNumbers(count($services));
 		?>
 		<div class="marketing_slider">
 			<div class="swiper marketingSlider">
@@ -564,6 +348,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 								<p><?=$servItem['PREVIEW_TEXT']?></p>
 							</div>
 							<div class="item_bottom">
+								<span><?=$numbers[$k]?></span>
 					 			<div class="market-block">
 					 				<a class="market-block-text" href="<?=$servItem['CODE']?>/">Подробнее</a> 
 					 					<svg class="arrow" width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -575,6 +360,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 						</div>
 					</div>
 					<?
+						$k+=1;
 						}
 					?>
 				</div>

@@ -37,7 +37,10 @@ $this->setFrameMode(true);
 	<tfoot>
 		<tr>
 			<td colspan="2">
-				<input type="submit" name="set_filter" value="<?=GetMessage("IBLOCK_SET_FILTER")?>" /><input type="hidden" name="set_filter" value="Y" />&nbsp;&nbsp;<input type="submit" name="del_filter" value="<?=GetMessage("IBLOCK_DEL_FILTER")?>" /></td>
+				<input type="submit" name="set_filter" value="<?=GetMessage("IBLOCK_SET_FILTER")?>" />
+				<input type="hidden" name="set_filter" value="Y" />&nbsp;&nbsp;
+				<input type="submit" name="del_filter" value="<?=GetMessage("IBLOCK_DEL_FILTER")?>" />
+			</td>
 		</tr>
 	</tfoot>
 	</table>

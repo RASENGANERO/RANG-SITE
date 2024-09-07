@@ -3,7 +3,7 @@
  * Файл local/templates/blog/components/bitrix/news/blog/bitrix/news.list/.default/result_modifier.php
  */
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();
-setlocale(LC_TIME, 'ru_RU.UTF-8');
+
 /*
  * Получаем информацию о текущем разделе инфоблока. Здесь возможны две ситуации:
  * - первая — мы имеем дело с обычным разделом инфоблока, который выводит список
@@ -124,17 +124,4 @@ if ($arParams['PARENT_SECTION'] > 0) { // это обычный раздел и�
     while ($arSection = $dbResult->GetNext()) {
         $arResult['SECTION_DATA']['CHILDS'][] = $arSection;
     }
-    $rsSections = CIBlockSection::GetList(
-        Array("SORT" => "ASC"),
-        Array(
-            "=IBLOCK_ID" => $arParams["IBLOCK_ID"],
-            "=ACTIVE"    => "Y"
-        )
-    );
-    $arSections = [];
-    // Собираем разделы в массив
-    while ($arSection = $rsSections->GetNext())
-        $arSections[] = $arSection;
-
-    $arResult['MAIN_SECTIONS'] = $arSections;
 }

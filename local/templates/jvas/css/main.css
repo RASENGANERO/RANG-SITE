@@ -93,7 +93,7 @@ header .header_block .social_menu {
   display: flex;
 }
 .social-menu-text {
-  font-family: "Robotoflex";
+  font-family: "Roboto Flex";
   font-size: 20px;
   font-weight: 200;
   line-height: 26px;
@@ -142,7 +142,7 @@ header .header_block .social_menu ul li:last-child {
   margin-right: 0;
 }
 .menu_child button {
-  font-family: "Robotoflex", sans-serif;
+  font-family: "Roboto Flex", sans-serif;
   font-size: 20px;
   font-weight: 200;
   line-height: 26px;
@@ -331,6 +331,7 @@ header .header_menu-links .header_menu-social {
   justify-content: space-between;
   position: relative;
   gap: 104px;
+  top: 19px;
 }
 .hero .hero_info::after {
   content: "";
@@ -2113,6 +2114,7 @@ header .header_menu-links .header_menu-social {
   background-size: 1034px 100%;
   padding: 150px 0;
   border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 .audience .audience_block {
   max-width: 800px;
@@ -2312,6 +2314,7 @@ header .header_menu-links .header_menu-social {
 }
 
 .marketing {
+  padding-top: 80px;
   padding-bottom: 100px;
 }
 .marketing_info {
@@ -2388,6 +2391,8 @@ header .header_menu-links .header_menu-social {
   font-weight: 100;
   line-height: 81.9px;
   color: #FFF;
+  top: 10px;
+  position: relative;
 }
 .marketing .item_bottom a {
   display: flex;
@@ -3666,7 +3671,7 @@ input::-webkit-inner-spin-button {
     padding-right: 100px;
   }
   header .header_menu {
-    width: 405px;
+    width: 404px;
   }
   .social-menu-text::before {
     left: -70px;
@@ -3787,7 +3792,6 @@ input::-webkit-inner-spin-button {
   }
 }
 @media only screen and (max-width: 1500px) {
-  .social-menu-text,
   header .header_block .social_menu ul li {
     margin-right: 40px;
   }
@@ -3908,7 +3912,7 @@ input::-webkit-inner-spin-button {
     width: 100px;
   }
   header .header_menu {
-    width: 369px;
+    width: 374px;
   }
   .menu_child button::before,
   .social-menu-text::before {
@@ -3933,7 +3937,6 @@ input::-webkit-inner-spin-button {
     width: 100%;
     height: 15px;
   }
-  .social-menu-text,
   header .header_block .social_menu ul li {
     margin-right: 33px;
   }
@@ -5082,6 +5085,11 @@ input::-webkit-inner-spin-button {
   }
   .audience .audience_slider-btn {
     width: 80%;
+  }
+}
+@media (max-width: 1300px) {
+  .social-menu-text{
+    margin-right: 33px;
   }
 }
 @media (max-width: 1200px) {
@@ -8764,13 +8772,12 @@ input::-webkit-inner-spin-button {
   gap: 20px;
 }
 .inn-text {
-  color: rgb(255, 255, 255);
-  font-family: 'Robotoflex';
-  font-size: 22px;
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 18px;
   font-weight: 200;
-  line-height: 26px;
-  letter-spacing: 0%;
-  text-align: left;
+  line-height: 21px;
+  color: #FFF;
+  transition: 0.3s ease all;
 }
 .item-text-budget{
   color: rgb(255, 255, 255);
@@ -8811,9 +8818,7 @@ input::-webkit-inner-spin-button {
   letter-spacing: 0%;
   text-align: left;
 }
-.item-urlbtn{
 
-}
 .content-item-down{
   display: flex;
   height: -webkit-fill-available;
@@ -8859,6 +8864,27 @@ input::-webkit-inner-spin-button {
   text-transform: uppercase;
   transition: 0.3s ease all;
   margin-bottom: 0px !important;
+}
+@media (max-width: 1200px){
+  .inn-text{
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 768px){
+  .inn-text{
+    font-size: 14px;
+    line-height: 16px;
+  }
+  .footer-inn-info{
+    gap: 12px;
+  }
+}
+@media (max-width: 576px){
+  .inn-text{
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 @media (max-width: 1200px) {
   .market-block-text {

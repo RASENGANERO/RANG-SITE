@@ -127,7 +127,7 @@ class Functions{
             $arr[] = [
                 'ID' => $elementId,
                 'NAME' => $elementName,
-                'CODE' => $elementCode,
+                'CODE' => '/services/' . $elementCode,
                 'PREVIEW_TEXT' => $elementText,
                 'PROPERTIES' => $props,
                 'PREVIEW_IMAGE' => $previewImage ? $previewImage['SRC'] : null, // URL картинки анонса
@@ -135,8 +135,28 @@ class Functions{
         }
         return $arr;
     }
-    public static function addMail() {
-
+    public static function getSectionBlog($check, $sectionChains) : array {
+        if (!array_key_exists('ELEMENT_CODE', $check)) {
+            return $sectionChains;
+        }
+        else{
+            $arSelect = array('ID', 'CODE', 'NAME');
+            $arFilter = array('IBLOCK_ID' => 15, 'IBLOCK_ACTIVE' => 'Y', 'ACTIVE' => 'Y');
+            $arSort = array('SORT' => 'ASC');
+            $dbResult = CIBlockSection::GetList($arSort, $arFilter, false, $arSelect);
+            $arResult = [];
+            while ($arSection = $dbResult->GetNext()) {
+                $arData = [];
+                $arData['NAME'] = $arSection['NAME'];
+                $arData['CODE'] = $arSection['CODE'];
+                $arData['SECTION_PAGE_URL'] = '/blog/' . $arSection['CODE'] .'/';
+                if (strpos($check['ELEMENT_CODE'], $arSection['CODE']) !== false) {
+                    $arData['IS_ACTIVE_SECTION'] = 'Y';
+                }
+                $arResult[] = $arData;
+            }
+            return $arResult;
+        }
     }
 
 }

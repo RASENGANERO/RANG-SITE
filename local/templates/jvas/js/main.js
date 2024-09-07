@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
             });
         });    
     }
-    if(document.querySelectorAll('.blog_tab').length!=0){
+    /*if(document.querySelectorAll('.blog_tab').length!=0){
         const tabs = document.querySelectorAll('.blog_tab');
         const tabValue = document.querySelector('.blog_tab-value');
         const cards = document.querySelectorAll('.blog_card');
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
                 setActiveTab(index);
             });
         });
-    }
+    }*/
     if(document.querySelectorAll('.agency_card-btn')!=null){
         const buttons = document.querySelectorAll('.agency_card-btn');
         const cardInfos = document.querySelectorAll('.card_info');

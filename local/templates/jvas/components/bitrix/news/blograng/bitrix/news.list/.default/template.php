@@ -12,36 +12,32 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-
-<!--<?php if (isset($arResult['SECTION_DATA']['CHILDS']) && !empty($arResult['SECTION_DATA']['CHILDS'])): ?>
-    <ul class="blog-subsections">
-    <?php foreach ($arResult['SECTION_DATA']['CHILDS'] as $arSection): ?>
-        <li><a href="<?= htmlspecialchars($arSection['SECTION_PAGE_URL']) ?>"><?= htmlspecialchars($arSection['NAME']) ?></a></li>
-    <?php endforeach; ?>
-    </ul>
-<?php endif; ?>-->
-
-<?php
-echo "<pre style='color:white;'>";
-print_r($arResult['SECTION_DATA']);
-echo "</pre>";
+<?php 
+$arResult['SECTION_DATA']['CHILDS'] = Functions::getSectionBlog($_GET, $arResult['SECTION_DATA']['CHILDS']);
 ?>
-
 <div class="blog">
 	<div class="container">
 		<div class="blog_info">
 			<div class="blog_navigator-wrap">
         		<div class="blog_navigator">
             		<h4>Навигатор</h4>
-            		<a class="blog_tab active">Все статьи</a>
-            		<?php foreach ($arResult['MAIN_SECTIONS'] as $arMainSection): ?>
-                		<button class="blog_tab"><?= htmlspecialchars($arMainSection['NAME']) ?></button> 
-            		<?php endforeach; ?>
+					<? if (!array_key_exists('ELEMENT_CODE', $_GET)): ?>
+						<a href="/blog" class="blog_tab active">Все статьи</a>
+					<? else: ?>
+						<a href="/blog" class="blog_tab">Все статьи</a>
+					<? endif; ?>
+
+					<?php foreach ($arResult['SECTION_DATA']['CHILDS'] as $arMainSection): ?>
+						<? $section = array_key_exists('IS_ACTIVE_SECTION', $arMainSection) ? 'active' : ''; ?>
+        				<a class="blog_tab <?= $section ?>" href="<?= $arMainSection['SECTION_PAGE_URL']; ?>"><?= htmlspecialchars($arMainSection['NAME']); ?></a>
+    				<?php endforeach; ?>
+					
         		</div>
     		</div>
 			<div class="blog_cards">
 				<div class="blog_card active">
-					<?	foreach($arResult["ITEMS"] as $arItem) 
+					<? if (count($arResult["ITEMS"]) > 0): ?>
+					<?	foreach ($arResult["ITEMS"] as $arItem) 
 						{
 							$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 							$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
@@ -66,6 +62,15 @@ echo "</pre>";
 						<? 
 						} 
 						?>
+					<? else: ?>
+						<div class="blog_item">
+ 							<div class="blog_item-info">
+								<div class="blog_item-title">
+									<p>Нет статей в данном разделе</p>
+								</div>
+							</div>
+						</div>	
+					<? endif; ?>
 				</div>
 			</div>
 		</div>

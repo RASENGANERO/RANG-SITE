@@ -24,7 +24,7 @@ $arUrlRewrite=array (
     'PATH' => '/residents/index.php',
     'SORT' => 100,
   ),
-  13 => 
+  15 => 
   array (
     'CONDITION' => '#^/services/#',
     'RULE' => '',
@@ -72,7 +72,7 @@ $arUrlRewrite=array (
     'PATH' => '/brand/index.php',
     'SORT' => 100,
   ),
-  12 => 
+  14 => 
   array (
     'CONDITION' => '#^/blog/#',
     'RULE' => '',
