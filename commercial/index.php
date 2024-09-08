@@ -4,15 +4,15 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 <main>
     <div class="hero main-hero commercial-hero">
         <div class="container">
-            <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", 
-                        "breadchain", 
-                        Array(
-	                        "PATH" => "",
-		                    "SITE_ID" => "s1",
-		                    "START_FROM" => "0",
-	                    ),
-	                    false
-                    );?>
+            <div class="breadcrumb_block">
+                <nav aria-label="breadcrumb" class="breadcrumb_block-nav">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Главная </a></li>
+                        <li class="breadcrumb-item"><a href="/services">Услуги <span> /</span></a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Построим отдел маркетинга и продаж</li>
+                    </ol>
+                </nav>
+            </div>
             <div class="hero_block">
                 <div class="title_hero title-main">
                     <h1>Построим эффективный коммерческий департамент</h1>
@@ -520,7 +520,58 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             </div>
         </div>
     </div>
+    <?php
+        $data = Functions::GetTarrifsByType('Тарифы коммерции');
+    ?>
     <div class="tariff tariff2">
+        <div class="container">
+            <div class="title">
+                <h2><?=count($data);?> тарифа по построению коммерческого департамента<</h2>
+            </div>
+            <div class="tariff_block">
+                <div class="swiper tariffSlider">
+                    <div class="swiper-wrapper">
+                        <?php
+                        $className = "";
+                        foreach($data as $item) {
+                            if($item['PROPERTIES']['TYPETEXT_CODE'][0] <= 1){
+                                $className='content-item-start';
+                            }
+                            else{
+                                $className='content-item-down';
+                            }
+                        ?>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <div class="title_tarif">
+                                    <h5><?=$item['PROPERTIES']['BUDGET_CODE'][0]?></h5>
+                                    <div class="<?=$className?>">
+                                        <div class="content-item-container">
+                                            <h3><?=$item['NAME']?></h3>
+                                            <div class="item-descr-container">
+                                                <?php
+                                                    foreach ($item['PROPERTIES']['DATA_CODE'] as $info) {
+                                                ?>
+                                                    <h4><?=$info?></h4>                                                  
+                                                <?    
+                                                }
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a class="item-urlbtn" href="#">собрать тариф <img src="/local/templates/jvas/img/Vector1.svg" alt=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <?
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="tariff tariff2">
         <div class="container">
             <div class="title">
                 <h2>4 тарифа по построению коммерческого департамента</h2>
@@ -576,7 +627,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
 </main>
 <?php 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");

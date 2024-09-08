@@ -4,15 +4,15 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 <main>
     <div class="hero main-hero brend-hero">
         <div class="container">
-            <? $APPLICATION->IncludeComponent("bitrix:breadcrumb", 
-                "breadchain", 
-                Array(
-	                "PATH" => "",
-		            "SITE_ID" => "s1",
-		            "START_FROM" => "0",
-	                ),
-	            false
-            );?>
+            <div class="breadcrumb_block">
+                <nav aria-label="breadcrumb" class="breadcrumb_block-nav">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Главная </a></li>
+                        <li class="breadcrumb-item"><a href="/services">Услуги <span> /</span></a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Станьте автором собственного бренда</li>
+                    </ol>
+                </nav>
+            </div>
             <div class="hero_block">
                 <div class="title_hero title-main">
                     <h1>Станьте автором собственного бренда</h1>
@@ -26,7 +26,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <div class="container">
             <div class="author_block">
                 <div class="author_top">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/logo2.svg" alt="" />
+                    <img src="/local/templates/jvas/img/logo2.svg" alt="" />
                     <h3>От идеи до реализации продукта</h3>
                     <h2>ВОПЛОТИТЕ СВОЮ МЕЧТУ И СТАНЬТЕ АВТОРОМ СОБСТВЕННОГО БРЕНДА</h2>
                 </div>
@@ -57,7 +57,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
         <div class="container">
             <div class="business_block">
                 <div class="title">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/gradus.svg" alt="" />
+                    <img src="/local/templates/jvas/img/gradus.svg" alt="" />
                     <h2>5 причин, чтобы реализовать мечту и запустить собственный бренд с нами</h2>
                     <h3>Успешный опыт, наработанные связи и реализованные кейсы ваш гарант к успешному старту</h3>
                 </div>
@@ -144,7 +144,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
     <div class="marketing marketing2">
         <div class="container">
             <div class="marketing_info marketing_info3">
-                <img src="<?=SITE_TEMPLATE_PATH?>/img/logo.svg" alt="" />
+                <img src="/local/templates/jvas/img/logo.svg" alt="" />
                 <h2>БРЕНДЫ ПОД “КЛЮЧ”</h2>
                 <p>ПОМОЖЕМ СОЗДАТЬ СОБСТВЕННЫЙ БРЕНД</p>
             </div>
@@ -153,8 +153,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="item">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img4.png" alt="" class="item_img" />
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img4.png" alt="" class="item_img-mob" />
+                                <img src="/local/templates/jvas/img/marketing2-img4.png" alt="" class="item_img" />
+                                <img src="/local/templates/jvas/img/marketing2-img4.png" alt="" class="item_img-mob" />
                                 <div class="item_top item_top1">
                                     <h3>ПРОДУКТЫ ПИТАНИЯ И НАПИТКИ</h3>
                                     <p>Создадим отдел по сопровождению клиентов и работе с входящим трафиком</p>
@@ -171,8 +171,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                         </div>
                         <div class="swiper-slide">
                             <div class="item">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img5.png" alt="" class="item_img" />
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img5.png" alt="" class="item_img-mob" />
+                                <img src="/local/templates/jvas/img/marketing2-img5.png" alt="" class="item_img" />
+                                <img src="/local/templates/jvas/img/marketing2-img5.png" alt="" class="item_img-mob" />
                                 <div class="item_top">
                                     <h3>БАДЫ И ФИТНЕС ПРОДУКТЫ</h3>
                                     <p>Создадим отдел по сопровождению клиентов и работе с входящим трафиком</p>
@@ -189,8 +189,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                         </div>
                         <div class="swiper-slide">
                             <div class="item">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img6.png" alt="" class="item_img" />
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img6.png" alt="" class="item_img-mob" />
+                                <img src="/local/templates/jvas/img/marketing2-img6.png" alt="" class="item_img" />
+                                <img src="/local/templates/jvas/img/marketing2-img6.png" alt="" class="item_img-mob" />
                                 <div class="item_top">
                                     <h3>КОСМЕТИКА И КОСМЕЦЕВТИКА</h3>
                                     <p>Создадим отдел по сопровождению клиентов и работе с входящим трафиком</p>
@@ -207,8 +207,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                         </div>
                         <div class="swiper-slide">
                             <div class="item">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img13.png" alt="" class="item_img" />
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img13.png" alt="" class="item_img-mob" />
+                                <img src="/local/templates/jvas/img/marketing2-img13.png" alt="" class="item_img" />
+                                <img src="/local/templates/jvas/img/marketing2-img13.png" alt="" class="item_img-mob" />
                                 <div class="item_top">
                                     <h3>корма для животных</h3>
                                     <p>Создадим отдел по сопровождению клиентов и работе с входящим трафиком</p>
@@ -225,8 +225,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                         </div>
                         <div class="swiper-slide">
                             <div class="item">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img14.png" alt="" class="item_img" />
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img14.png" alt="" class="item_img-mob" />
+                                <img src="/local/templates/jvas/img/marketing2-img14.png" alt="" class="item_img" />
+                                <img src="/local/templates/jvas/img/marketing2-img14.png" alt="" class="item_img-mob" />
                                 <div class="item_top">
                                     <h3 class="item_top-title">бытовая химия</h3>
                                     <p>Создадим отдел по сопровождению клиентов и работе с входящим трафиком</p>
@@ -243,8 +243,8 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                         </div>
                         <div class="swiper-slide">
                             <div class="item">
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img15.png" alt="" class="item_img" />
-                                <img src="<?=SITE_TEMPLATE_PATH?>/img/marketing2-img15.png" alt="" class="item_img-mob" />
+                                <img src="/local/templates/jvas/img/marketing2-img15.png" alt="" class="item_img" />
+                                <img src="/local/templates/jvas/img/marketing2-img15.png" alt="" class="item_img-mob" />
                                 <div class="item_top">
                                     <h3 class="item_top-title">авто - химия</h3>
                                     <p>Создадим отдел по сопровождению клиентов и работе с входящим трафиком</p>
@@ -270,7 +270,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             <div class="container">
                 <div class="innovative_block">
                     <div class="title">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/logo2.svg" alt="" />
+                        <img src="/local/templates/jvas/img/logo2.svg" alt="" />
                         <h2>ЭТАП №1</h2>
                         <p>РАЗРАБОТКА ПРОДУКТА</p>
                     </div>
@@ -348,7 +348,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             <div class="container">
                 <div class="innovative_block">
                     <div class="title">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/logo2.svg" alt="" />
+                        <img src="/local/templates/jvas/img/logo2.svg" alt="" />
                         <h2>ЭТАП №2</h2>
                         <p>ЗАПУСК ПРОИЗВОДСТВА</p>
                     </div>
@@ -399,7 +399,7 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             <div class="container">
                 <div class="innovative_block">
                     <div class="title">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/logo2.svg" alt="" />
+                        <img src="/local/templates/jvas/img/logo2.svg" alt="" />
                         <h2>ЭТАП №3</h2>
                         <p>РЕАЛИЗАЦИЯ ПРОДУКТА</p>
                     </div>
@@ -446,17 +446,16 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
             </div>
         </div>
     </div>
-
+    <?php
+        $data = Functions::GetTarrifsByType('Тарифы запуска');
+    ?>
     <div class="tariff tariff2">
         <div class="container">
             <div class="title">
-                <h2>4 тарифа по запуску вашего бренда</h2>
+                <h2><?=count($data);?> тарифа по запуску вашего бренда</h2>
             </div>
             <div class="tariff_block">
                 <div class="swiper tariffSlider">
-                    <?php
-                    $data = Functions::GetTarrifsByType('Тарифы запуска');
-                    ?>
                     <div class="swiper-wrapper">
                         <?php
                         $className = "";
@@ -471,78 +470,28 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
                         <div class="swiper-slide">
                             <div class="item">
                                 <div class="title_tarif">
-                                    <p class="item-text-budget"><?=$item['PROPERTIES']['BUDGET_CODE'][0]?></p>
+                                    <h5><?=$item['PROPERTIES']['BUDGET_CODE'][0]?></h5>
                                     <div class="<?=$className?>">
                                         <div class="content-item-container">
-                                            <h1 class="item-text-name"><?=$item['NAME']?></h1>
+                                            <h3><?=$item['NAME']?></h3>
                                             <div class="item-descr-container">
                                                 <?php
-                                                    foreach ($item['PROPERTIES']['DATA_CODE'] as $info){
+                                                    foreach ($item['PROPERTIES']['DATA_CODE'] as $info) {
                                                 ?>
-                                                    <span class="item-text-description"><?=$info?></span>                                                  
+                                                    <h4><?=$info?></h4>                                                  
                                                 <?    
                                                 }
                                                 ?>
                                             </div>
                                         </div>
                                     </div>
-                                    <a class="item-urlbtn" href="#">собрать тариф <img src="img/Vector1.svg" alt=""></a>
+                                    <a class="item-urlbtn" href="#">собрать тариф <img src="/local/templates/jvas/img/Vector1.svg" alt=""></a>
                                 </div>
                             </div>
                         </div>
                         <?
                         }
                         ?>
-                        <!--<div class="swiper-slide">
-                            <div class="item item_sec item4">
-                                <div class="title_tarif">
-                                    <h5>От 200 000 в месяц + бюджет</h5>
-                                    <h3>Производство</h3>
-                                    <h4>1. Анализ и разработка концепции продукта и рецептуры
-                                        1. Анализ и разработка концепции продукта и рецептуры
-                                        2. Поиск поставщиков и запуск пилотной партии продукта
-                                    </h4>
-                                    <a href="#">собрать тариф <img src="<?=SITE_TEMPLATE_PATH?>/img/Vector1.svg" alt="" /></a>
-                                </div>
-                            </div>
-                        </div>-->
-                        <!--<div class="swiper-slide">
-                            <div class="item item3">
-                                <div class="title_tarif">
-                                    <h5>От 100 000 в месяц + бюджет</h5>
-                                    <div class="tarif_info">
-                                        <h3>Реализация продукта</h3>
-                                        <div class="tarif_info-texts">
-                                            <h4>1. Анализ и разработка концепции продукта и рецептуры</h4>
-                                            <h4>2. Поиск поставщиков и запуск пилотной партии продукта</h4>
-                                            <h4>3. Вывод продукта на рынок</h4>
-                                        </div>
-                                        <a href="#">собрать тариф <img src="<?=SITE_TEMPLATE_PATH?>/img/Vector1.svg" alt="" /></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="item item_sec item4">
-                                <div class="title_tarif">
-                                    <h5>% + бюджет</h5>
-                                    <h3>Комплексное сопровождение</h3>
-                                    <h4>
-                                        1. Анализ и разработка концепции продукта и рецептуры
-                                        <br />
-                                        <br />
-                                        2. Поиск поставщиков и запуск пилотной партии продукта
-                                        <br />
-                                        <br />
-                                        3. Вывод продукта на рынок
-                                        <br />
-                                        <br />
-                                        4. Сопровождение продукта по реализации и популярности
-                                    </h4>
-                                    <a href="#">собрать тариф <img src="<?=SITE_TEMPLATE_PATH?>/img/Vector1.svg" alt="" /></a>
-                                </div>
-                            </div>
-                        </div>-->
                     </div>
                 </div>
             </div>

@@ -66,6 +66,7 @@ class Functions{
         }
         return $arr;
     }
+    
     public static function getBrands()
     {
         $arr = [];
@@ -104,7 +105,7 @@ class Functions{
     public static function GetServices() {
         $iblockId = 21;
         $arr = [];
-        $data = CIBlockElement::GetList(['ID' => 'ASC'], ['IBLOCK_ID' => $iblockId], false, false);
+        $data = CIBlockElement::GetList(['SORT' => 'ASC'], ['IBLOCK_ID' => $iblockId], false, false);
         while ($res = $data->Fetch()) {
             $elementId = $res['ID'];
             $elementName = $res['NAME'];
@@ -159,5 +160,35 @@ class Functions{
         }
     }
 
+    
+
+
+
+    public static function generateBreadCrumbsService($contentHtml, $nameState, $prevtextState) {
+        $dom = new DOMDocument();
+        $dom->loadHTML(strval($contentHtml));
+
+    }
+    public static function generateTextes($contentHtml, $nameText, $prevText) {
+        $dom = new DOMDocument();
+    
+        // Загружаем HTML и подавляем предупреждения
+        @$dom->loadHTML($contentHtml);
+    
+        // Проверяем существование элемента с ID 'nametext'
+        $nameTextElement = $dom->getElementById('nametext');
+        if ($nameTextElement) {
+            $nameTextElement->nodeValue = $nameText;
+        }
+    
+        // Проверяем существование элемента с ID 'prevtext'
+        $prevTextElement = $dom->getElementById('prevtext');
+        if ($prevTextElement) {
+            $prevTextElement->nodeValue = $prevText;
+        }
+    
+        // Сохраняем и возвращаем измененный HTML
+        return $dom->saveHTML();
+    }
 }
 ?>

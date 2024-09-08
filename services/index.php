@@ -21,6 +21,7 @@ $APPLICATION->SetTitle("");?><main>
 	</div>
 </div>
 <?php endif;?> 
+
  <?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"services", 
@@ -53,7 +54,7 @@ $APPLICATION->SetTitle("");?><main>
 			0 => "",
 			1 => "",
 		),
-		"DETAIL_SET_CANONICAL_URL" => "N",
+		"DETAIL_SET_CANONICAL_URL" => "Y",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
 		"DISPLAY_NAME" => "Y",
@@ -93,7 +94,7 @@ $APPLICATION->SetTitle("");?><main>
 		"SHOW_404" => "N",
 		"SORT_BY1" => "TIMESTAMP_X",
 		"SORT_BY2" => "SORT",
-		"SORT_ORDER1" => "DESC",
+		"SORT_ORDER1" => "ASC",
 		"SORT_ORDER2" => "DESC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
@@ -107,7 +108,7 @@ $APPLICATION->SetTitle("");?><main>
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "#SECTION_CODE#/",
-			"detail" => "#ELEMENT_CODE#/",
+			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 		)
 	),
 	false

@@ -1,5 +1,5 @@
 <?
-$sSectionName = "Брэнд";
+$sSectionName = "Бренд";
 $arDirProperties = array(
 );
 ?>

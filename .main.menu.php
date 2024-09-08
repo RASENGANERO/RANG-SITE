@@ -2,49 +2,49 @@
 $aMenuLinks = Array(
 	Array(
 		"О компании", 
-		"company",
+		"company", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Резиденты", 
-		"residents",
+		"residents", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Технологии AI", 
-		"techno",
+		"techno", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Кейсы", 
-		"cases",
+		"/blog/cases/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Блог", 
-		"blog",
+		"blog", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Контакты", 
-		"contacts",
+		"contacts", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Связь с нами", 
-		"",
+		"", 
 		Array(), 
 		Array(), 
 		"" 

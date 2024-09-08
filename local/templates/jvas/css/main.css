@@ -2026,6 +2026,7 @@ header .header_menu-links .header_menu-social {
   align-items: start;
   gap: 30px;
   max-width: 640px;
+  cursor: pointer;
 }
 .innovative_slider .item .item_num {
   font-family: "Resotho";
@@ -2744,9 +2745,6 @@ header .header_menu-links .header_menu-social {
   color: #FFF;
 }
 
-.new {
-  padding: 0px 0px 100px;
-}
 .new_block {
   display: flex;
   flex-direction: column;
@@ -3685,9 +3683,6 @@ input::-webkit-inner-spin-button {
   .menu_child button {
     margin-right: 72px;
   }
-  .social-menu-text {
-    margin-right: 45px;
-  }
   header .header_block .social_menu ul li {
     margin-right: 40px;
   }
@@ -3937,9 +3932,7 @@ input::-webkit-inner-spin-button {
     width: 100%;
     height: 15px;
   }
-  header .header_block .social_menu ul li {
-    margin-right: 33px;
-  }
+  
   header .header_menu .container {
     padding: 14px 16px 0;
     gap: 14px;
@@ -4543,8 +4536,7 @@ input::-webkit-inner-spin-button {
   .marketing1 .item::after {
     top: 70px;
   }
-  .agency,
-  .new {
+  .agency{
     padding: 50px 0px 90px;
   }
   .new_block {
@@ -4717,7 +4709,6 @@ input::-webkit-inner-spin-button {
   }
   .audience2 {
     background-image: url("/local/templates/jvas/img/audience2-bg.png");
-    background-size: 56% 740px;
     background-position: 0;
   }
   .audience2 .audience_block {
@@ -5089,7 +5080,7 @@ input::-webkit-inner-spin-button {
 }
 @media (max-width: 1300px) {
   .social-menu-text{
-    margin-right: 33px;
+    margin-right: 13px;
   }
 }
 @media (max-width: 1200px) {
@@ -8913,4 +8904,8 @@ input::-webkit-inner-spin-button {
 }
 .subscribe-messform{
   display: none;
+}
+.text-not{
+  color: #FFF;
+  font-size: 22px;
 }

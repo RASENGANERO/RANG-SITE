@@ -18,7 +18,7 @@ $this->setFrameMode(true);
 //echo "<pre>";
 ?>
 
-<div class="hero hero_services">
+<div class="hero hero_services" style="background-image: url(<?=$arResult['DETAIL_PICTURE']['SRC']?>);">
     <div class="container">
 		<div class="breadcrumb_block">
  			<nav aria-label="breadcrumb" class="breadcrumb_block-nav">
@@ -81,7 +81,5 @@ $this->setFrameMode(true);
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
 </div>
-
-     

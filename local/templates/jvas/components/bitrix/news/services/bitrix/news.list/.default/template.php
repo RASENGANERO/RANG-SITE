@@ -16,6 +16,7 @@ $this->setFrameMode(true);
 	$k = 0;
 	$numbers = Functions::generateNumbers(count($arResult["ITEMS"])); 
 ?>
+<?php print_r($_GET);?>
 <div class="container">
 	
 <div class="marketing solution_marketing marketing-pad-top">

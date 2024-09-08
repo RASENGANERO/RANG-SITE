@@ -63,7 +63,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 <div class="agency-resident">
 	<div class="container">
 		<div class="title_hero agency_title">
-			<h2>РЕЗИДЕНТЫ АГЕНТСТВА</h2>
+			<a href="/residents"><h2>РЕЗИДЕНТЫ АГЕНТСТВА</h2></a>
 			<h3>Люди которые работают над успехом вашего бренда</h3>
 		</div>
 		 <!-- Swiper -->
@@ -84,7 +84,10 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 										 <?=$item['PROPERTIES']['SPECIAL_CODE'][0]?>
 									</p>
 								</div>
- 								<button class="agency_card-btn">регалии </button>
+ 								<button class="agency_card-btn">регалии <svg class="arrow" width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        					<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
+                    					</svg></button>
+								 
 							</div>
 						</div>
 						<div class="card_info">
@@ -384,7 +387,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 					<li>Корма для животных</li>
 					<li>Бытовая химия</li>
 				</ul>
- 				<a href="#" class="audience_link">перейти</a>
+ 				<a href="/brand" class="audience_link">перейти</a>
 			</div>
 		</div>
 	</div>
@@ -402,9 +405,9 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 <div class="department">
 	<div class="container">
 		<div class="department_info">
- <img src="/local/templates/jvas/img/logo.svg" alt="">
+ 			<img src="/local/templates/jvas/img/logo.svg" alt="">
 			<h2>Построим отдел маркетинга и продаж «под ключ»</h2>
- <a href="#" class="department_link">перейти</a>
+ 			<a href="/commercial" class="department_link">перейти</a>
 		</div>
 	</div>
 	<div class="count-block count-block2">
@@ -438,10 +441,10 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 	<div class="container">
 		<div class="marketing_info">
  <img src="/local/templates/jvas/img/gradus.svg" alt="">
-			<h2>Результаты эффективного маркетинга в цифрах</h2>
-			<p>
-				 Наглядно демонстрируем результаты кейсов наших клиентов решаем внештатные ситуации через профессионализм и гибкий подход к процессам Поэтому достигаем высоких результатов для каждого
-			</p>
+			<a href="/blog">
+				<h2>Результаты эффективного маркетинга в цифрах</h2>
+			</a>
+			<p>Наглядно демонстрируем результаты кейсов наших клиентов решаем внештатные ситуации через профессионализм и гибкий подход к процессам Поэтому достигаем высоких результатов для каждого</p>
 		</div>
 		<div class="marketing_slider marketing_slider2">
 			<div class="swiper marketingSlider2">
@@ -546,7 +549,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 		<div class="available_block">
 			<div class="title">
  				<img src="/local/templates/jvas/img/logo.svg" alt="">
-				<h2>Слово бизнесу:</h2>
+				<a href="/blog"><h2>Слово бизнесу:</h2></a>
 				<h3>отзывы и рекомендации</h3>
 			</div>
 			<div class="item_all no-scrollbar">
@@ -588,10 +591,8 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 	<div class="container">
 		<div class="marketing_info">
  <img src="/local/templates/jvas/img/gradus.svg" alt="">
-			<h2>Библиотека рекламщика - новости из мира рекламы и маркетинга</h2>
-			<p>
-				 Авторский контент для пользы вашему бизнесу и конверсионных продаж
-			</p>
+			<a href="/blog"><h2>Библиотека рекламщика - новости из мира рекламы и маркетинга</h2></a>
+			<p>Авторский контент для пользы вашему бизнесу и конверсионных продаж</p>
 		</div>
 		<div class="marketing_slider marketing_slider2">
 			<div class="swiper marketingSlider2">
