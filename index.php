@@ -353,7 +353,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 							<div class="item_bottom">
 								<span><?=$numbers[$k]?></span>
 					 			<div class="market-block">
-					 				<a class="market-block-text" href="<?=$servItem['CODE']?>/">Подробнее</a> 
+					 				<a class="market-block-text" href="<?=$servItem['DETAIL_PAGE_URL']?>">Подробнее</a> 
 					 					<svg class="arrow" width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                         					<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
                     					</svg>

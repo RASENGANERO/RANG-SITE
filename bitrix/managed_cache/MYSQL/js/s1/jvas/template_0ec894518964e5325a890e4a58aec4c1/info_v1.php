@@ -1,1 +1,0 @@
-<?php $filesInfo = ["/local/templates/jvas/js/main.js" => "172275052824",]; ?>

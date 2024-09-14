@@ -13,8 +13,16 @@
 $this->setFrameMode(true);
 ?>
 <?php 
+//echo "<pre style='color:white;'>";
+//print_r($_GET);
+//echo "</pre>";
+$checkSection = Functions::isSection($_GET);
+//echo "<pre style='color:white;'>";
+//print_r($checkSection);
+//echo "</pre>";
 $arResult['SECTION_DATA']['CHILDS'] = Functions::getSectionBlog($_GET, $arResult['SECTION_DATA']['CHILDS']);
 ?>
+<? if (count($checkSection) === 0) {?>
 <div class="blog">
 	<div class="container">
 		<div class="blog_info">
@@ -51,7 +59,7 @@ $arResult['SECTION_DATA']['CHILDS'] = Functions::getSectionBlog($_GET, $arResult
 									</div>
 									<div class="blog_item-date">
                                         <span><?=$arItem['DISPLAY_ACTIVE_FROM']?></span>
-                                        <a href="<?=$arItem['CODE']?>/"><?=$arItem['PROPERTIES']['CHECK_READ']['VALUE'];?> 
+                                        <a href="<?=$arItem['DETAIL_PAGE_URL']?>"><?=$arItem['PROPERTIES']['CHECK_READ']['VALUE'];?> 
                                             <svg width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
                                             </svg>
@@ -70,6 +78,20 @@ $arResult['SECTION_DATA']['CHILDS'] = Functions::getSectionBlog($_GET, $arResult
 		</div>
 	</div>
 </div>
+<? } 
+	else 
+	{ $APPLICATION->AddChainItem($checkSection[0]['NAME'], '/');
+?>
+	<div class="new">
+		<div class="container">
+			<div class="new_block">
+				<?php echo html_entity_decode($checkSection[0]['DETAIL_TEXT']);?>
+			</div>
+		</div>
+	</div>  	
+<?
+}
+?>
 
 <!--<div class="news-list">
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>

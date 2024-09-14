@@ -9,7 +9,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Комплексные решения", 
-		"#", 
+		"/services/complex-decisions/", 
 		Array(), 
 		Array(), 
 		"" 

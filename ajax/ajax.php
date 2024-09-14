@@ -3,9 +3,53 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/modules/main/include/prolog_before.ph
 header('Content-Type: application/json');
 
 CModule::IncludeModule("iblock");
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+function sendMail($val) {
+    $name = htmlspecialchars($val['name']);
+    $phone = htmlspecialchars($val['phone']);
+    $email = htmlspecialchars($val['email']);
+    $company = htmlspecialchars($val['company']);
 
-function sendMail() {
+    // Создаем экземпляр PHPMailer
+    $mail = new PHPMailer(true);
 
+    try {
+        // Настройки сервера
+
+
+        $mail->isSMTP();
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+        $mail->CharSet = "UTF-8";
+        $mail->SMTPAuth   = true;
+        $mail->Host = 'smtp.beget.com'; // Укажите SMTP сервер
+        $mail->Username = 'adminjvas@jvas.ru'; // Ваш email
+        $mail->Password = 'A&7TyWQQQS0E'; // Ваш пароль
+        $mail->SMTPSecure = 'ssl'; // Используйте TLS
+        $mail->Port = 465; 
+        // Получатели
+        $mail->setFrom('adminjvas@jvas.ru', 'jvas.ru');
+        $mail->addAddress('LadyBoss@jvas.ru', 'jvas.ru'); // Добавьте адрес получателя
+
+        // Контент письма
+        $mail->isHTML(true);
+        $mail->Subject = 'Новая заявка с сайта';
+        $mail->Body    = "<h1>Новая заявка</h1>
+                          <p><strong>Имя:</strong> $name</p>
+                          <p><strong>Телефон:</strong> $phone</p>
+                          <p><strong>Email:</strong> $email</p>
+                          <p><strong>Компания:</strong> $company</p>";
+        $mail->send();
+        return json_encode(['error' => false, 'message' => 'Вы успешно отправили сообщение!'], JSON_UNESCAPED_UNICODE);
+    } catch (Exception $e) {
+        return json_encode(['error' => true, 'message' => 'Ошибка отправки сообщения: ' . $mail->ErrorInfo], JSON_UNESCAPED_UNICODE);
+    }
 }
 
 function addMails($userMail) {
@@ -33,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = addMails($_POST['usermail']);
     }
     if (strval($_POST['type']) === 'sendmail') {
-        $result = addMails($_POST['user']);
+        $result = sendMail($_POST);
     }
     echo $result;
 }

@@ -12,7 +12,12 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+<?
 
+$sectionId = $arResult['IBLOCK_SECTION_ID'];
+
+if ($sectionId) {
+?>
 <div class="new">
 	<div class="container">
 		<div class="new_block">
@@ -20,3 +25,4 @@ $this->setFrameMode(true);
 		</div>
 	</div>
 </div>            
+<?}?>

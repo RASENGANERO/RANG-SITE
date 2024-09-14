@@ -17,6 +17,40 @@ function closeAlls(modal){
     let closeModalOut=modal.querySelector('.modal_bg');
     closeModalOut.addEventListener('click',() => closeModal(modal));       
 }
+function show_video(){
+    let videoWrap = document.getElementsByClassName('new_video-wrap')[0];
+    let imgTags = Array.from(videoWrap.childNodes).filter(node => node.nodeType === Node.ELEMENT_NODE && node.tagName === 'IMG');
+    imgTags[0].setAttribute('style','display:none;');
+    let s=document.getElementsByClassName('frame-video')[0];
+    s.setAttribute('style','display:flex;');
+    document.getElementsByClassName('new_video-play')[0].remove();
+}
+function send_mail(){
+    let dt = {
+        "type":"sendmail",
+        "name":document.getElementById('formInp1').value,
+        "phone":document.getElementById('formInp2').value,
+        "email":document.getElementById('formInp3').value,
+        "company":document.getElementById('formInp4').value,
+    };
+    $.ajax({
+        url: '/ajax/ajax.php',
+        type: 'POST',
+        dataType: 'json',
+        data: dt,
+        success: function(response) {
+            console.log(response);
+            document.getElementById('messform2').textContent = response.message;
+            document.getElementById('messform2').style = 'display:flex;';
+            setTimeout(()=>{
+                window.location.reload();
+            }, 2000);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 function add_mailing(){
     let dt = {
         "type":"addmail",
@@ -791,4 +825,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if (document.getElementById('subscribe')!=null){
         document.getElementById('subscribe').addEventListener('click', add_mailing);
     }
+    if (document.getElementsByClassName('new_video-play').length!=0){
+        let s=document.getElementsByClassName('new_video-play')[0];
+        s.addEventListener('click',show_video);
+    }
+    if (document.getElementById('send_form')!=null){
+        document.getElementById('send_form').addEventListener('click', send_mail);
+    }
+    $('#sendmails').on('submit', function(e) {
+        e.preventDefault(); // Отменяем стандартное поведение формы
+    });
 });

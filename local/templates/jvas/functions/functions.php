@@ -101,41 +101,59 @@ class Functions{
         return $numbers;
     }
 
+    public static function getSectionId() {
+
+    }
 
     public static function GetServices() {
         $iblockId = 21;
         $arr = [];
-        $data = CIBlockElement::GetList(['SORT' => 'ASC'], ['IBLOCK_ID' => $iblockId], false, false);
-        while ($res = $data->Fetch()) {
-            $elementId = $res['ID'];
-            $elementName = $res['NAME'];
-            $elementCode = $res['CODE'];
-            $elementText = $res['PREVIEW_TEXT'];
-            $properties = CIBlockElement::GetProperty($iblockId, $elementId, ['sort' => 'asc'], ['ACTIVE' => 'Y']);
-            $props = [];
-
-            while ($prop = $properties->Fetch()) {
-                // Проверяем, если свойство уже существует в массиве
-                if (!isset($props[$prop['CODE']])) {
-                    $props[$prop['CODE']] = []; // Инициализируем как массив
+    
+        // Получаем ID раздела по его названию
+        $sectionResult = CIBlockSection::GetList(
+            [],
+            ['IBLOCK_ID' => $iblockId, 'NAME' => 'Комплексные решения'],
+            false
+        );
+    
+        if ($section = $sectionResult->Fetch()) {
+            $sectionId = $section['ID'];
+    
+            // Получаем элементы из найденного раздела
+            $data = CIBlockElement::GetList(
+                ['SORT' => 'ASC'], // Сортировка по полю SORT
+                ['IBLOCK_ID' => $iblockId, 'SECTION_ID' => $sectionId],
+                false,
+                false
+            );
+    
+            while ($res = $data->Fetch()) {
+                $elementId = $res['ID'];
+               
+    
+                // Получаем свойства элемента
+                $properties = CIBlockElement::GetProperty($iblockId, $elementId, ['sort' => 'asc'], ['ACTIVE' => 'Y']);
+                $props = [];
+    
+                while ($prop = $properties->Fetch()) {
+                    if (!isset($props[$prop['CODE']])) {
+                        $props[$prop['CODE']] = []; // Инициализируем как массив
+                    }
+                    $props[$prop['CODE']][] = $prop['VALUE'];
                 }
-                // Добавляем значение в массив свойств
-                $props[$prop['CODE']][] = $prop['VALUE'];
+    
+                // Получаем изображения
+                $previewImageId = $res['PREVIEW_PICTURE']; // ID картинки анонса
+                $previewImage = CFile::GetFileArray($previewImageId);
+                $res['DETAIL_PAGE_URL'] = '/services/'.$section['CODE'].'/'.$res['CODE'].'/';
+                $res['PREVIEW_IMAGE'] = $previewImage ? $previewImage['SRC'] : null;
+                $arr[] = $res;
             }
-            // Получаем изображения
-            $previewImageId = $res['PREVIEW_PICTURE']; // ID картинки анонса
-            $previewImage = CFile::GetFileArray($previewImageId);
-            $arr[] = [
-                'ID' => $elementId,
-                'NAME' => $elementName,
-                'CODE' => '/services/' . $elementCode,
-                'PREVIEW_TEXT' => $elementText,
-                'PROPERTIES' => $props,
-                'PREVIEW_IMAGE' => $previewImage ? $previewImage['SRC'] : null, // URL картинки анонса
-            ];
         }
+    
         return $arr;
     }
+    
     public static function getSectionBlog($check, $sectionChains) : array {
         if (!array_key_exists('ELEMENT_CODE', $check)) {
             return $sectionChains;
@@ -159,36 +177,84 @@ class Functions{
             return $arResult;
         }
     }
-
-    
-
-
-
-    public static function generateBreadCrumbsService($contentHtml, $nameState, $prevtextState) {
-        $dom = new DOMDocument();
-        $dom->loadHTML(strval($contentHtml));
-
+    public static function checkIsServiceSection($val) {
+        // Получаем список секций по коду
+        $result = CIBlockSection::GetList(['SORT' => 'ASC'], ['IBLOCK_ID' => 21, 'CODE' => $val]);
+        
+        // Проверяем, есть ли результат
+        if ($dt = $result->GetNext()) {
+            return $dt['ID']; // Возвращаем ID секции
+        } else {
+            return null; // Возвращаем null, если секция не найдена
+        }
     }
-    public static function generateTextes($contentHtml, $nameText, $prevText) {
-        $dom = new DOMDocument();
     
-        // Загружаем HTML и подавляем предупреждения
-        @$dom->loadHTML($contentHtml);
+    public static function isService($url) {
+        // Разбиваем URL на части и очищаем пустые значения
+        $url = array_values(array_filter(explode("/", strval($url))));
+        
+        // Если в URL только один элемент, возвращаем статус 1
+        if (count($url) === 1) {
+            return ['status' => 1, 'data' => []];
+        } else {
+            // Проверяем, существует ли секция
+            $isSection = Functions::checkIsServiceSection($url[1]);
+            
+            // Основные параметры фильтрации
+            $arFilter = [
+                'IBLOCK_ID' => 21,
+                'ACTIVE' => 'Y'
+            ];
+            $arSort = ['SORT' => 'ASC'];
+            
+            // Определяем, какой фильтр использовать
+            if ($isSection === null) { 
+                $arFilter['CODE'] = $url[1]; // Используем CODE для элемента
+                $statusCode = 2; // Статус для элемента
+            } else {
+                $arFilter['SECTION_ID'] = $isSection; // Используем ID секции
+                $statusCode = 3; // Статус для секции
+            }
     
-        // Проверяем существование элемента с ID 'nametext'
-        $nameTextElement = $dom->getElementById('nametext');
-        if ($nameTextElement) {
-            $nameTextElement->nodeValue = $nameText;
+            // Получаем элементы из инфоблока
+            $resElement = CIBlockElement::GetList($arSort, $arFilter, false);
+            $result = [];
+            
+            // Сохраняем результаты в массив
+            while ($elem = $resElement->GetNext()) {
+                $detailImageId = $elem['DETAIL_PICTURE']; // ID детальной картинки
+                $detailImage = CFile::GetFileArray($detailImageId);
+                $elem['DETAIL_PICTURE'] = $detailImage ? $detailImage['SRC'] : null;
+                $result[] = $elem;
+            }
+    
+            return ['status' => $statusCode, 'data' => $result]; // Возвращаем статус и данные
         }
-    
-        // Проверяем существование элемента с ID 'prevtext'
-        $prevTextElement = $dom->getElementById('prevtext');
-        if ($prevTextElement) {
-            $prevTextElement->nodeValue = $prevText;
+    }
+
+    public static function isSection($value)
+    {
+        if (!array_key_exists('ELEMENT_CODE', $value)) {
+            return [];
         }
-    
-        // Сохраняем и возвращаем измененный HTML
-        return $dom->saveHTML();
+        else {  // Параметры для фильтрации
+            $arFilter = array(
+                'IBLOCK_ID' => 15, // Замените на ваш ID инфоблока
+                'CODE' => str_replace('/','',strval($value['ELEMENT_CODE'])), // Символьный код элемента
+                'ACTIVE' => 'Y' // Только активные элементы
+            );
+            $db_list = CIBlockElement::GetList(array(), $arFilter);
+            
+            $db_res = [];    // Проверяем, есть ли найденные элементы
+            if ($ar_result = $db_list->GetNext()) {
+                $db_res [] = $ar_result;
+                return $db_res;    // Добавьте другие поля, которые вам нужны
+            } 
+            else {
+                return [];
+            }
+        }
+            
     }
 }
 ?>

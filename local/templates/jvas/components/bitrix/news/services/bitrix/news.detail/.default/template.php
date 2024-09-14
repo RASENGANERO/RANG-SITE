@@ -16,15 +16,47 @@ $this->setFrameMode(true);
 //echo "<pre style='color:white;'>";
 //print_r($arResult);
 //echo "<pre>";
-?>
 
-<div class="hero hero_services" style="background-image: url(<?=$arResult['DETAIL_PICTURE']['SRC']?>);">
+	//$val=Functions::isService($APPLICATION->GetCurPage());
+	//echo "<pre style='color:red;'>";
+	//print_r($val);
+	//echo "</pre>";
+
+?>
+<style>
+	.marketing-pad-bot{
+		display: none !important;
+	}
+</style>
+<div class="hero hero_services" style="background-image: url(<?=$arResult['DETAIL_PICTURE']['SRC']?>);background-size: cover;background-position: center;">
     <div class="container">
+	<?
+	//echo "<pre style='color:white;'>";
+	//print_r($arResult);
+	//echo "</pre>";
+   /* // Получаем массив хлебных крошек
+    $arBreadcrumbs = $APPLICATION->GetCurDir();
+    $breadcrumbs = $APPLICATION->GetNavChain();
+
+    // Формируем текстовый путь
+    $breadcrumbText = '';
+    foreach ($breadcrumbs as $breadcrumb) {
+        $breadcrumbText .= $breadcrumb['NAME'] . ' > ';
+    }
+
+    // Удаляем последний разделитель
+    $breadcrumbText = rtrim($breadcrumbText, ' > ');
+*/
+    // Выводим текстовый путь
+  ?>
 		<div class="breadcrumb_block">
  			<nav aria-label="breadcrumb" class="breadcrumb_block-nav">
 				<ol class="breadcrumb">
 					<li class="breadcrumb-item"><a href="/">Главная </a></li>
 					<li class="breadcrumb-item"><a href="/services">Услуги </a></li>
+					<? if (array_key_exists('SECTION',$arResult)):?>
+						<li class="breadcrumb-item"><a href="<?=$arResult['SECTION']['PATH'][0]['SECTION_PAGE_URL']?>"><?=$arResult['SECTION']['PATH'][0]['NAME']?></a></li>
+					<? endif; ?>
 					<li class="breadcrumb-item active" aria-current="page"><?=$arResult['NAME']?></li>
 				</ol>
  			</nav>
@@ -63,7 +95,7 @@ $this->setFrameMode(true);
 								<div class="item_bottom">
 									<span><?=$numbers[$k]?></span>
 					 				<div class="market-block">
-					 					<a class="market-block-text" href="<?=$servItem['CODE']?>/">Подробнее</a> 
+					 					<a class="market-block-text" href="<?=$servItem['DETAIL_PAGE_URL']?>">Подробнее</a> 
 					 						<svg class="arrow" width="15" height="7" viewBox="0 0 15 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                         						<path d="M1 0.5L7.5365 6.5M14 0.5L7.4635 6.5" stroke="white"/>
                     						</svg>

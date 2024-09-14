@@ -5,7 +5,7 @@
                 <button class="modal-close"><img src="<?=SITE_TEMPLATE_PATH?>/img/close.svg" alt=""></button>
             </div>
             <h2 class="modal_title">Оставьте Ваши данные и мы перезвоним</h2>
-            <form class="form_boxs">
+            <form id="sendmails" class="form_boxs">
                 <div class="modal_form-box">
                     <label for="formInp1">Как к Вам обращаться? *</label>
                     <input type="text" id="formInp1" placeholder="Заполните Ваши ФИО" required>
@@ -22,9 +22,10 @@
                     <label for="formInp4">Какую компанию Вы представляете?</label>
                     <input type="text" id="formInp4" placeholder="Указать наименование компании  ">
                 </div>
-                <button class="modal_form-btn thank_open" type="submit">отправить</button>
+                <button id="send_form" class="modal_form-btn thank_open" type="submit">отправить</button>
                 <p class="modal_text">Нажимая на кнопку «отправить», вы соглашаетесь с обработкой персональных данных
                 </p>
+                <p id="messform2" class="subscribe-messform subscribe_text2">Нажимая на кнопку «подписаться», вы соглашаетесь с обработкой персональных данных</p>
             </form>
         </div>
         <div class="modal_bg"></div>

@@ -1,6 +1,6 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("");?><main>
-<?php if ($APPLICATION->GetCurPage()=="/services/"):?>
+
 <div class="marketing solution_marketing marketing-pad-bot">
 	<div class="container">
 		 <?$APPLICATION->IncludeComponent(
@@ -13,16 +13,16 @@ $APPLICATION->SetTitle("");?><main>
 			),
 			false
 		);?>
-		<div class="marketing_info">
+		<!--<div class="marketing_info">
  			<img src="/local/templates/jvas/img/gradus.svg" alt="">
 			<h2>Комплексные решения</h2>
 			<p>от разработки стратегии до маркетинга 360°</p>
-		</div>
+		</div>-->
 	</div>
 </div>
-<?php endif;?> 
 
- <?$APPLICATION->IncludeComponent(
+
+<?$APPLICATION->IncludeComponent(
 	"bitrix:news", 
 	"services", 
 	array(
@@ -39,8 +39,7 @@ $APPLICATION->SetTitle("");?><main>
 		"CACHE_TIME" => "36000000",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => "services",
-		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "j F Y",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_FIELD_CODE" => array(
@@ -63,15 +62,15 @@ $APPLICATION->SetTitle("");?><main>
 		"DISPLAY_TOP_PAGER" => "N",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "21",
-		"IBLOCK_TYPE" => "services",
+		"IBLOCK_TYPE" => "blog",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
-		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"LIST_ACTIVE_DATE_FORMAT" => "j F Y",
 		"LIST_FIELD_CODE" => array(
-			0 => "",
+			0 => "CODE",
 			1 => "",
 		),
 		"LIST_PROPERTY_CODE" => array(
-			0 => "",
+			0 => "CHECK_READ",
 			1 => "",
 		),
 		"MESSAGE_404" => "",
@@ -86,16 +85,15 @@ $APPLICATION->SetTitle("");?><main>
 		"PAGER_TEMPLATE" => ".default",
 		"PAGER_TITLE" => "Новости",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"SEF_FOLDER" => "/services/",
 		"SEF_MODE" => "Y",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_STATUS_404" => "Y",
 		"SET_TITLE" => "Y",
 		"SHOW_404" => "N",
-		"SORT_BY1" => "TIMESTAMP_X",
+		"SORT_BY1" => "ACTIVE_FROM",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER1" => "ASC",
-		"SORT_ORDER2" => "DESC",
+		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N",
 		"USE_CATEGORIES" => "N",
 		"USE_FILTER" => "N",
@@ -105,6 +103,16 @@ $APPLICATION->SetTitle("");?><main>
 		"USE_RSS" => "N",
 		"USE_SEARCH" => "N",
 		"USE_SHARE" => "N",
+		"COMPONENT_TEMPLATE" => "services",
+		"SEF_FOLDER" => "/services/",
+		"FILTER_FIELD_CODE" => array(
+			0 => "ID",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "CHECK_READ",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "#SECTION_CODE#/",
@@ -112,4 +120,5 @@ $APPLICATION->SetTitle("");?><main>
 		)
 	),
 	false
-);?> </main><?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
+);?> </main>
+<?php require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

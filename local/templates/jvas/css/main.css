@@ -159,7 +159,7 @@ header .header_menu {
   top: 100%;
   right: 0;
   max-height: 0;
-  width: 560px;
+  width: 559px;
   background: rgba(45, 41, 30, 0.6980392157);
   border: 1px solid #FFFFFF;
   opacity: 0;
@@ -3738,8 +3738,6 @@ input::-webkit-inner-spin-button {
     padding: 39px 18px 20px 20px;
   }
   .audience {
-    background-position: -135px 0;
-    background-size: 890px 100%;
     padding: 150px 0 70px;
   }
   .audience2 {
@@ -3830,11 +3828,11 @@ input::-webkit-inner-spin-button {
   }
   .audience1 {
     background-image: url("/local/templates/jvas/img/audience-bg-1400.png");
-    background-size: 751px 100%;
+    background-size: contain;
     background-position: 0 0;
   }
   .audience2 {
-    background-size: 751px 100%;
+    background-size: contain;
   }
   .audience .audience_block {
     max-width: 548px;
@@ -3907,7 +3905,7 @@ input::-webkit-inner-spin-button {
     width: 100px;
   }
   header .header_menu {
-    width: 374px;
+    width: 368px;
   }
   .menu_child button::before,
   .social-menu-text::before {
@@ -7175,6 +7173,16 @@ input::-webkit-inner-spin-button {
     padding: 20px 22px;
     font-size: 16px;
     line-height: 18px;
+    width: fit-content;
+    height: 59px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 22px 20px 22px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
   }
   .blog_info .blog_navigator .blog_tab span {
     width: auto;
@@ -8908,4 +8916,19 @@ input::-webkit-inner-spin-button {
 .text-not{
   color: #FFF;
   font-size: 22px;
+}
+.frame-video{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #FFFFFF;
+  height: 400px;
+}
+.video-pad-bot{
+  padding-bottom: 28px;
+}
+#messform2{
+  color: white;
 }

@@ -1,1 +1,0 @@
-<?php $filesInfo = ["/local/templates/jvas/css/bootstrap.css" => "1723907622311546","/local/templates/jvas/css/main.css" => "1723401124201437",]; ?>
