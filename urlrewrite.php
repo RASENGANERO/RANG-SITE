@@ -96,4 +96,12 @@ $arUrlRewrite=array (
     'PATH' => '/blog/index.php',
     'SORT' => 100,
   ),
+  32 => 
+  array (
+    'CONDITION' => '#^/tariff/',
+    'RULE' => NULL,
+    'ID' => '',
+    'PATH' => '/tariff/index.php',
+    'SORT' => 100,
+  ),
 );

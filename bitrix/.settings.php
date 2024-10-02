@@ -1,4 +1,3 @@
-
 <?php
 return array (
   'utf_mode' => 
@@ -28,7 +27,7 @@ return array (
   array (
     'value' => 
     array (
-      'debug' => false,
+      'debug' => true,
       'handled_errors_types' => 4437,
       'exception_errors_types' => 4437,
       'ignore_silence' => false,

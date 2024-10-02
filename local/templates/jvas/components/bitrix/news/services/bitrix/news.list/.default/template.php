@@ -60,8 +60,11 @@ $this->setFrameMode(true);
 	</div>
 <? endif; ?>
 <? if ($val['status'] == 2):?>
-	<?$dats=$val['data'][0];
-	?>
+	<style>
+	.marketing-pad-bot{
+		display: none !important;
+	}
+	</style>
 	<div class="hero hero_services" style="background-image: url(<?=$val['data'][0]['DETAIL_PICTURE']?>);background-size: cover;background-position: center;">
     <div class="container">
 		<div class="breadcrumb_block">

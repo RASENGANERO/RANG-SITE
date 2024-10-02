@@ -101,9 +101,7 @@ class Functions{
         return $numbers;
     }
 
-    public static function getSectionId() {
-
-    }
+    
 
     public static function GetServices() {
         $iblockId = 21;

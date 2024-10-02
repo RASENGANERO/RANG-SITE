@@ -25,6 +25,14 @@ function show_video(){
     s.setAttribute('style','display:flex;');
     document.getElementsByClassName('new_video-play')[0].remove();
 }
+function setcheckbox(event){ 
+    if(event.currentTarget.hasAttribute('checked')==true){
+        event.currentTarget.removeAttribute('checked');
+    }
+    else{
+        event.currentTarget.setAttribute('checked','checked');
+    }
+}
 function send_mail(){
     let dt = {
         "type":"sendmail",
@@ -73,7 +81,72 @@ function add_mailing(){
         }
     });
 }
+function send_mail_tarrif(){
+    let dt = {
+        "type":"sendtarrifmail",
+        "username":document.getElementById('username-tarrif-text').value,
+        "phone":document.getElementById('phone-tarrif-text').value
+    };
+    $.ajax({
+        url: '/ajax/ajax.php',
+        type: 'POST',
+        dataType: 'json',
+        data: dt,
+        success: function(response) {
+            document.getElementById('messform-tarrif').textContent = response.message;
+            document.getElementById('messform-tarrif').style = 'display:flex;color:green;';
+            setTimeout(()=>{
+                window.location.reload();
+            }, 2000);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
+function getDataTarrif(){
+    let inputs = document.getElementsByTagName('input');
+    let sp = [];
+    for(let i=0; i<inputs.length; i++){
+        if (inputs[i].hasAttribute('checked')===true){
+            if (inputs[i].hasAttribute('tarriff-type')===true){
+                sp.push(String(inputs[i].getAttribute('tarriff-type'))+'--->'+String(inputs[i].getAttribute('value')));
+            }
+            else{
+                sp.push(String(inputs[i].getAttribute('value')));
+            }
+        }
+    }
+    return sp.join("\n");
+}
 
+function send_tarrif_form(){
+    let data=getDataTarrif();
+    let dt = {
+        "type":"sendtarrifform",
+        "name":document.getElementById('formTarriffInp1').value,
+        "phone":document.getElementById('formTarriffInp2').value,
+        "email":document.getElementById('formTarriffInp3').value,
+        "company":document.getElementById('formTarriffInp4').value,
+        "dataform":data,
+    };
+    $.ajax({
+        url: '/ajax/ajax.php',
+        type: 'POST',
+        dataType: 'json',
+        data: dt,
+        success: function(response) {
+            document.getElementById('messform3').textContent = response.message;
+            document.getElementById('messform3').style = 'display:flex;color:green;';
+            setTimeout(()=>{
+                window.location.reload();
+            }, 2000);
+        },
+        error: function(xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 document.addEventListener('DOMContentLoaded', ()=>{
     if(document.getElementsByClassName('privacy_open2').length!=0){
         let s=document.getElementsByClassName('privacy_open2');
@@ -93,11 +166,19 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
     if(document.getElementsByClassName('contact-btn').length!=0){
         let s=document.getElementsByClassName('contact-btn');
-        let modalForm=document.getElementsByClassName('modal_form')[0];
+        let modalForm=document.getElementsByClassName('modal_form')[1];
         Array.from(s).forEach(button => {
             button.addEventListener('click', () => openModal(modalForm));
         });
         closeAlls(modalForm);
+    }
+    if(document.getElementsByClassName('servey-checkbox-button').length!=0){
+        let s=document.getElementsByClassName('servey-checkbox-button');
+        let modalFormTarriff=document.getElementsByClassName('modal_form')[0];
+        Array.from(s).forEach(button => {
+            button.addEventListener('click', () => openModal(modalFormTarriff));
+        });
+        closeAlls(modalFormTarriff);
     }
     // Header menu 
     if(document.getElementsByClassName('menu-btn').length!=0){
@@ -831,6 +912,26 @@ document.addEventListener('DOMContentLoaded', ()=>{
     }
     if (document.getElementById('send_form')!=null){
         document.getElementById('send_form').addEventListener('click', send_mail);
+    }
+    if (document.getElementsByClassName('maincheckbox').length!=0){
+        let checkboxes = document.getElementsByClassName('maincheckbox');
+        for (let i=0; i<checkboxes.length; i++) {
+            checkboxes[i].addEventListener('click', setcheckbox);
+        }
+    }
+    if (document.getElementsByClassName('selectcheckbox').length!=0){
+        let checkboxes_circle = document.getElementsByClassName('selectcheckbox');
+        for (let i=0; i<checkboxes_circle.length; i++) {
+            checkboxes_circle[i].addEventListener('click', setcheckbox);
+        }
+    }
+    if (document.getElementsByClassName("tarriff-form-btn").length!=0) {
+        let s = document.getElementsByClassName("tarriff-form-btn")[0];
+        s.addEventListener('click',send_mail_tarrif);
+    }
+    if (document.getElementById("send_form_tarriff")!==null) {
+        let s = document.getElementById("send_form_tarriff");
+        s.addEventListener('click',send_tarrif_form);
     }
     $('#sendmails').on('submit', function(e) {
         e.preventDefault(); // Отменяем стандартное поведение формы

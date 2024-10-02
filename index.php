@@ -327,7 +327,9 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 	<div class="container">
 		<div class="marketing_info">
  			<img src="/local/templates/jvas/img/gradus.svg" alt="">
-			<h2>Комплексные решения для роста вашего бизнеса</h2>
+			<a href="/services/complex-decisions/">
+				<h2>Комплексные решения для роста вашего бизнеса</h2>
+			</a>
 			<p>
 				 от разработки стратегии до маркетинга 360°
 			</p>
@@ -433,7 +435,7 @@ $APPLICATION->SetTitle("Главная"); ?><main>
 					 стандартов </h3>
 				</div>
 			</div>
- <a href="#" class="department_link">перейти</a>
+ 		<a href="/commercial" class="department_link">перейти</a>
 		</div>
 	</div>
 </div>

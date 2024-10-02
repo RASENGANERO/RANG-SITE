@@ -1,0 +1,5 @@
+<?
+$sSectionName = "Tарифы";
+$arDirProperties = array(
+);
+?>

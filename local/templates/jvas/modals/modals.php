@@ -1,3 +1,37 @@
+    <!-- Modal form tarriff-->
+    <div class="modal_form">
+        <div class="modal_wrap">
+            <div class="modal_top">
+                <button class="modal-close"><img src="<?=SITE_TEMPLATE_PATH?>/img/close.svg" alt=""></button>
+            </div>
+            <h2 class="modal_title">Оставьте Ваши данные и мы пришлем расчет</h2>
+            <form id="sendmails" class="form_boxs">
+                <div class="modal_form-box">
+                    <label for="formInp1">Как к Вам обращаться? *</label>
+                    <input type="text" id="formTarriffInp1" placeholder="Заполните Ваши ФИО" required>
+                </div>
+                <div class="modal_form-box">
+                    <label for="formInp2">Ваш контактный номер телефона *</label>
+                    <input type="number" id="formTarriffInp2" placeholder="Укажите Ваш номер телефона" required>
+                </div>
+                <div class="modal_form-box">
+                    <label for="formInp3">Ваш контактный электронный адрес *</label>
+                    <input type="text" id="formTarriffInp3" placeholder="Укажите Ваш электронный адрес" required>
+                </div>
+                <div class="modal_form-box">
+                    <label for="formInp4">Какую компанию Вы представляете?</label>
+                    <input type="text" id="formTarriffInp4" placeholder="Указать наименование компании  ">
+                </div>
+                <button id="send_form_tarriff" class="modal_form-btn thank_open" type="submit">отправить</button>
+                <p class="modal_text">Нажимая на кнопку «отправить», вы соглашаетесь с обработкой персональных данных</p>
+                <p id="messform3" class="subscribe-messform subscribe_text2"></p>
+            </form>
+        </div>
+        <div class="modal_bg"></div>
+    </div>
+    <!-- Modal form tarriff-->
+    
+    
     <!-- Modal form -->
     <div class="modal_form">
         <div class="modal_wrap">
